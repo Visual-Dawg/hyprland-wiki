@@ -1,6 +1,5 @@
 # Table of contents
 
-{{< toc >}}
 
 Please keep in mind some layout-specific dispatchers will be listed in the
 layout pages (See the sidebar).
@@ -75,7 +74,7 @@ layout pages (See the sidebar).
 | global | Executes a Global Shortcut using the GlobalShortcuts portal. See [here](../Binds/#global-keybinds) | name |
 | submap | Change the current mapping group. See [Submaps](../Binds/#submaps) | `reset` or name |
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 it is NOT recommended to set DPMS with a keybind directly, as it
 might cause undefined behavior. Instead, consider something like
 
@@ -83,7 +82,7 @@ might cause undefined behavior. Instead, consider something like
 bind = MOD,KEY,exec,sleep 1 && hyprctl dispatch dpms off
 ```
 
-{{< /hint >}}
+{{< /callout >}}
 
 ## Grouped (tabbed) windows
 
@@ -122,26 +121,26 @@ You have eight choices:
 
 - Special Workspace: `special` or `special:name` for named special workspaces.
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 `special` is supported ONLY on
 `movetoworkspace` and `movetoworkspacesilent`. Any other dispatcher will result in undocumented behavior.
-{{< /hint >}}
+{{< /callout >}}
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 Numerical workspaces (e.g. `1`, `2`, `13371337`) are allowed
 **ONLY** between 1 and 2147483647 (inclusive)
 
 Neither `0` nor negative numbers are allowed.
-{{< /hint >}}
+{{< /callout >}}
 
 # Special Workspace
 
 A special workspace is what is called a "scratchpad" in some other places. A
 workspace that you can toggle on/off on any monitor.
 
-{{< hint >}}
+{{< callout >}}
 You can define multiple named special workspaces, but the amount of those is limited to 97 at a time.
-{{< /hint >}}
+{{< /callout >}}
 
 For example, to move a window/application to a special workspace you can use the following syntax:
 

@@ -10,7 +10,7 @@ If it's not, go to the repo root and `/hyprctl`. Issue a `make all` and then
 
 # Using Hyprctl
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 
 _hyprctl_ calls will be dispatched by the compositor _synchronously_,
 meaning any spam of the utility will cause slowdowns.
@@ -19,7 +19,7 @@ limiting the amount of info calls.
 
 For live event handling, see the [socket2](../../IPC/).
 
-{{< /hint >}}
+{{< /callout >}}
 
 ## Commands
 
@@ -138,7 +138,7 @@ example command for a typical keyboard:
 hyprctl switchxkblayout at-translated-set-2-keyboard next
 ```
 
-{{< hint >}}
+{{< callout >}}
 
 If you want a single variant ie. pl/dvorak on one layout but us/qwerty on the other, xkb parameters can still be blank, however the amount of comma-separated parameters have to match. Alternatively, a single parameter can be specified for it to apply to all three.
 
@@ -150,7 +150,7 @@ input {
 }
 ```
 
-{{< /hint >}}
+{{< /callout >}}
 
 ### seterror
 

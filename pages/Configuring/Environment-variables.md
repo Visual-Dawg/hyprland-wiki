@@ -4,7 +4,7 @@ the Display Server, e.g.:
 env = GTK_THEME,Nord
 ```
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 Hyprland puts the raw string to the envvar with the `env` keyword. You should _not_ add quotes around the values.
 
 e.g.:
@@ -16,7 +16,7 @@ and ***NOT***
 ```ini
 env = QT_QPA_PLATFORM,"wayland"
 ```
-{{< /hint >}}
+{{< /callout >}}
 
 Please avoid putting those environment variables in /etc/environment. That will cause all
 sessions (including Xorg ones) to pick up your wayland-specific environment on traditional

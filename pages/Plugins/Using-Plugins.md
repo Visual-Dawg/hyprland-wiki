@@ -1,10 +1,9 @@
 This page will tell you how to use plugins.
 
-{{< toc >}}
 
 ## Disclaimers
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 Plugins are written in C++ and will run as a part of Hyprland.
 
 Make sure to _always_ read the source code of the plugins you are going to use
@@ -13,7 +12,7 @@ and to trust the source.
 Writing a plugin to wipe your computer is easy.
 
 ***Never*** trust random `.so` files you receive from other people.
-{{< /hint >}}
+{{< /callout >}}
 
 ## Getting plugins
 

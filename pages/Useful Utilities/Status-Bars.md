@@ -1,6 +1,5 @@
 # Table of contents
 
-{{< toc >}}
 
 # Waybar
 
@@ -79,11 +78,11 @@ are a few examples listed in the [Readme](https://github.com/elkowar/eww). It's 
 highly recommended to read through the
 [Configuration options](https://elkowar.github.io/eww/configuration.html).
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 Read
 [the Wayland section](https://elkowar.github.io/eww/configuration.html#wayland)
 carefully before asking why your bar doesn't work.
-{{< /hint >}}
+{{< /callout >}}
 
 Here are some example widgets that might be useful for Hyprland:
 

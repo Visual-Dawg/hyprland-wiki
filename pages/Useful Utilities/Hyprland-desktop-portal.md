@@ -13,13 +13,13 @@ In order to bridge the gap, Hyprland has its own fork of XDPW that
 has more features, called [xdg-desktop-portal-hyprland](https://github.com/hyprwm/xdg-desktop-portal-hyprland).
 (later called XDPH)
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 You don't **need** XDPH. Hyprland will work with XDPW, but XDPH has more features, like e.g.
 window sharing.
 
 XDPH will work on other wlroots-based compositors, although limited to the XDPW features (other
 will be disabled)
-{{< /hint >}}
+{{< /callout >}}
 
 ## Installing
 {{< tabs "uniqueid" >}}
@@ -79,9 +79,9 @@ See [The Github repo's readme](https://github.com/hyprwm/xdg-desktop-portal-hypr
 
 {{< /tabs >}}
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 XDPH doesn't implement a file picker. For that, I recommend installing `xdg-desktop-portal-gtk` alongside XDPH.
-{{< /hint >}}
+{{< /callout >}}
 
 ## Usage
 

@@ -1,6 +1,5 @@
 # Table of contents
 
-{{< toc format=html >}}
 
 # General
 
@@ -47,14 +46,14 @@ monitor=DP-1, 1920x1080, 0x0, 1
 monitor=DP-2, 1920x1080, -1920x0, 1
 ```
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 
 The position is calculated with the scaled (and transformed) resolution, meaning if
 you want your 4K monitor with scale 2 to the left of your 1080p one, you'd use
 the position `1920x0` for the second screen. (3840 / 2)
 If the monitor is also rotated 90 degrees (vertical), you'd use `1080x0`.
 
-{{</ hint >}}
+{{</ callout >}}
 
 Leaving the name empty will define a fallback rule to use when no other rules
 match.
@@ -127,13 +126,13 @@ To disable a monitor, use
 monitor=name,disable
 ```
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 
 Disabling a monitor will literally remove it from the layout, moving all windows and workspaces
 to any remaining ones. If you want to disable your monitor in a screensaver style (just turn
 off the monitor) use the `dpms` [dispatcher](../Dispatchers).
 
-{{</ hint >}}
+{{</ callout >}}
 
 # Custom reserved area
 
@@ -205,7 +204,7 @@ flipped + 180 degrees -> 6
 flipped + 270 degrees -> 7
 ```
 
-{{< hint type=note >}}
+{{< callout type=note >}}
 If you're using a touchscreen, you'll also have to rotate its digitizer to match: 
 
 ```ini
@@ -217,7 +216,7 @@ input {
 ```
 
 This will be done automatically when [#3544](https://github.com/hyprwm/Hyprland/pull/3544) lands.
-{{< /hint >}}
+{{< /callout >}}
 
 # Default workspace
 

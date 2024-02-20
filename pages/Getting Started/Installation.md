@@ -17,12 +17,12 @@ might have **major** issues running Hyprland.
 Installing Hyprland is very easy. Either you install it from your local package
 provider (if they provide pkgs for Hyprland) or you install/build it yourself.
 
-{{< hint title=note >}}
+{{< callout title=note >}}
 This project is under development and is constantly
 changing. If you want to keep up to date with the latest commits, please
 consider updating your packages with `yay -Syu --devel`, or your other preferred
 package manager.
-{{< /hint >}}
+{{< /callout >}}
 
 ### Packages
 
@@ -115,14 +115,14 @@ you will also need to build the latest wayland, wayland-protocols, and libdispla
 
 for more info refer to the [Ubuntu Guide For Installing And Building Hyprland Gist](https://gist.github.com/Vertecedoc4545/3b077301299c20c5b9b4db00f4ca6000)
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 
 Please note that since Ubuntu is generally behind with dependencies, it's not guaranteed
 that the build process will work at all. Even if it is, it's likely that it will break at some point in the future.
 
 Refer to the gist if anything fails.
 
-{{< /hint >}}
+{{< /callout >}}
 
 {{</ tab >}}
 {{< tab "Void Linux*" >}}
@@ -131,9 +131,9 @@ however template files are available [from a third party](https://github.com/Mak
 
 For further instructions on building with the third party resource, refer to the [README](https://github.com/Makrennel/hyprland-void/blob/master/README.md).
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 As always, when using third party scripts exercise caution and understand what the script does.
-{{< /hint>}}
+{{< /callout>}}
 {{< /tab >}}
 
 {{< /tabs >}}

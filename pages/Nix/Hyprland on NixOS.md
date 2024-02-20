@@ -7,10 +7,10 @@ your Display Manager.
 Make sure to check out the options of the
 [NixOS module](https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=hyprland).
 
-{{< hint title=Note >}}
+{{< callout title=Note >}}
 - *(Required) NixOS Module*: enables critical components needed to run Hyprland properly
 - *(Optional) Home-manager module*: lets you declaratively configure Hyprland
-{{< /hint >}}
+{{< /callout >}}
 
 {{< tabs "uniqueid" >}}
 
@@ -30,10 +30,10 @@ This will use the Hyprland version that Nixpkgs has.
 
 {{< tab "Flake package" >}}
 
-{{< hint >}}
+{{< callout >}}
 Please enable [Cachix](../Cachix) before using the flake package, so you don't
 have to compile Hyprland yourself.
-{{< /hint >}}
+{{< /callout >}}
 
 In case you want to use the development version of Hyprland, you can add it
 like this:
@@ -70,10 +70,10 @@ Don't forget to change the `HOSTNAME` to your actual hostname!
 
 {{< tab "Flake package, Nix stable" >}}
 
-{{< hint >}}
+{{< callout >}}
 Please enable [Cachix](../Cachix) before using the flake package, so you don't
 have to compile Hyprland yourself.
-{{< /hint >}}
+{{< /callout >}}
 
 ```nix
 # configuration.nix

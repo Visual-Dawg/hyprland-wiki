@@ -11,10 +11,10 @@ your Nix configuration.
 The [Hyprland Cachix](https://app.cachix.org/cache/hyprland) exists to cache the
 `hyprland` packages and any dependencies not found in [cache.nixos.org].
 
-{{< hint >}}
+{{< callout >}}
 In order for Nix to take advantage of the cache, it has to be enabled **before**
 using the Hyprland flake package.
-{{< /hint >}}
+{{< /callout >}}
 
 ```nix
 # configuration.nix
@@ -26,12 +26,12 @@ using the Hyprland flake package.
 }
 ```
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 Do **not** override Hyprland's `nixpkgs` input unless you know what you are
 doing.
 
 Doing so will make the cache useless, since you're building from a different
 Nixpkgs commit.
-{{< /hint >}}
+{{< /callout >}}
 
 [cache.nixos.org]: https://cache.nixos.org

@@ -3,7 +3,6 @@ If you are coming to Hyprland for the first time, this is the main tutorial to r
 Due to a lot of people doing stupid stuff, this tutorial will cover literally everything
 you need to just get things going. It does link to other pages where necessary.
 
-{{< toc >}}
 
 ## Install Hyprland
 See [Installation](../Installation) and come back here once you have successfully

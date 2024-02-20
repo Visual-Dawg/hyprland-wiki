@@ -1,6 +1,5 @@
 This page documents the basics of making your own Hyprland plugin from scratch.
 
-{{< toc >}}
 
 ## How do plugins work?
 

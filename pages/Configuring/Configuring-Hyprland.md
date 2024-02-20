@@ -9,14 +9,14 @@ There is no "reload" keybind. The config is reloaded the moment you save it.
 
 Start a section with `name {` and end in `}` **_in separate lines!_**
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 The default config is not complete and does not list all the options / features of Hyprland. 
 Please refer to this wiki page and the pages
 linked further down here for full configuration instructions.
 
 **Make sure to read the [Variables](../Variables) page as well**. It covers all the
 toggleable / numerical options.
-{{< /hint >}}
+{{< /callout >}}
 
 # Line style
 

@@ -1,3 +1,7 @@
+---
+title: Crashes and Bugs
+---
+
 # Getting the log
 
 If you are in a TTY, and the hyprland session that crashed was the last one you
@@ -58,26 +62,33 @@ Prepare yourself mentally, and then:
 
 recommended to do in tty
 
-clone wayland (`git clone --recursive https://gitlab.freedesktop.org/wayland/wayland`)
-clone hyprland (`git clone --recursive https://github.com/hyprwm/Hyprland`)
+clone wayland
+(`git clone --recursive https://gitlab.freedesktop.org/wayland/wayland`) clone
+hyprland (`git clone --recursive https://github.com/hyprwm/Hyprland`)
 
-add these envs to your Hyprland config to reset ASAN_OPTIONS for children and set LD_PRELOAD:
+add these envs to your Hyprland config to reset ASAN_OPTIONS for children and
+set LD_PRELOAD:
+
 ```
 env = ASAN_OPTIONS,detect_odr_violation=0
 env = LD_PRELOAD,/usr/lib/libasan.so.8.0.0
 ```
-_Please note to check the asan .so version on your system with `ls /usr/lib | grep libasan`_
+
+_Please note to check the asan .so version on your system with
+`ls /usr/lib | grep libasan`_
 
 wayland:
+
 ```
 meson ./build --prefix=/usr --buildtype=debug -Db_sanitize=address
 sudo ninja -C build install
 ```
 
-The Wayland build will likely fail citing missing dependencies such as Doxygen, these
-dependencies will likely be available from your distros package manager.
+The Wayland build will likely fail citing missing dependencies such as Doxygen,
+these dependencies will likely be available from your distros package manager.
 
 hyprland:
+
 ```
 cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Debug -DWITH_ASAN:STRING=True -S . -B ./build -G Ninja
 cmake --build ./build --config Debug --target all -j`nproc 2>/dev/null || getconf NPROCESSORS_CONF`
@@ -90,6 +101,7 @@ sudo make install
 ```
 
 Exit Hyprland to a TTY, cd to the cloned hyprland, and launch it:
+
 ```
 ASAN_OPTIONS="detect_odr_violation=0,log_path=asan.log" ./build/Hyprland -c ~/.config/hypr/hyprland.conf
 ```
@@ -98,11 +110,15 @@ open your terminal
 
 Do whatever you used to do in order to crash the compositor.
 
-Please note many apps will refuse to launch. Notably complex applications, like e.g. browsers.
+Please note many apps will refuse to launch. Notably complex applications, like
+e.g. browsers.
 
-Once it crashes, go to `~` or `cwd` and look for `asan.log.XXXXX` files. Zip all and attach to the issue.
+Once it crashes, go to `~` or `cwd` and look for `asan.log.XXXXX` files. Zip all
+and attach to the issue.
 
-once you are done, to revert your horribleness of no app opening without the ld preload just go to the cloned wayland and do
+once you are done, to revert your horribleness of no app opening without the ld
+preload just go to the cloned wayland and do
+
 ```
 sudo rm -rf ./build
 meson ./build --prefix=/usr --buildtype=release
@@ -110,6 +126,7 @@ sudo ninja -C build install
 ```
 
 To revert the changes to hyprland and wlroots, do inside the cloned hyprland:
+
 ```
 make all && sudo make install
 ```

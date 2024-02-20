@@ -3,7 +3,7 @@ page, you will be presented with some that do not deserve their own page.
 
 See the sidebar for more keywords to control binds, animations, monitors, et cetera.
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 
 Please remember, that for ALL arguments separated by a comma, if you want to
 leave one of them empty, you cannot reduce the number of commas, _unless told
@@ -19,11 +19,10 @@ three_param_keyword = A, , C # OK
 three_param_keyword = A, B,  # OK
 ```
 
-{{< /hint >}}
+{{< /callout >}}
 
 # Table of contents
 
-{{< toc format=html >}}
 
 # Executing
 
@@ -132,10 +131,10 @@ device {
 
 _remember about the space after the end of the device's name (before the `{`)!_
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 Per-device layouts will not alter the keybind keymap, so for example with a global keymap of `us`
 and a per-device one of `fr`, the keybinds will still act as if you were on `us`.
-{{< /hint >}}
+{{< /callout >}}
 
 # Wallpapers
 
@@ -176,9 +175,9 @@ layerrule = unset,NAMESPACE
 
 # Setting the environment
 
-{{< hint type=note >}}
+{{< callout type=note >}}
 The `env` keyword works just like `exec-once`, meaning it will only fire once on Hyprland's launch.
-{{< /hint >}}
+{{< /callout >}}
 
 You can use the `env` keyword to set environment variables at Hyprland's start, e.g.:
 ```ini
@@ -190,7 +189,7 @@ You can also add a `d` flag if you want the env var to be exported to D-Bus (sys
 envd = XCURSOR_SIZE,24
 ```
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 Hyprland puts the raw string to the envvar. You should _not_ add quotes around the values.
 
 e.g.:
@@ -202,4 +201,4 @@ and ***NOT***
 ```ini
 env = QT_QPA_PLATFORM,"wayland"
 ```
-{{< /hint >}}
+{{< /callout >}}

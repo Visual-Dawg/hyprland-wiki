@@ -6,7 +6,6 @@ etc. see the sidebar. For anything else, see [Keywords](../Keywords).
 Please keep in mind some options that are layout-specific will be documented in
 the layout pages and not here. (See the Sidebar for Dwindle and Master layouts)
 
-{{< toc >}}
 
 # Variable types
 
@@ -21,7 +20,7 @@ the layout pages and not here. (See the Sidebar for Dwindle and Master layouts)
 | str | a string |
 | gradient | a gradient, in the form of `color color ... [angle]` where `color` is a color (see above) and angle is an angle in degrees, in the format of `123deg` e.g. `45deg` (e.g. `rgba(11ee11ff) rgba(1111eeff) 45deg`) Angle is optional and will default to `0deg` |
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 
 **_Colors:_**
 
@@ -39,7 +38,7 @@ legacy, e.g. `0xeeb3ff1a` -> ARGB order
 SHIFT CAPS CTRL/CONTROL ALT MOD2 MOD3 SUPER/WIN/LOGO/MOD4 MOD5
 ```
 
-{{< /hint >}}
+{{< /callout >}}
 
 # Sections
 
@@ -68,9 +67,9 @@ SHIFT CAPS CTRL/CONTROL ALT MOD2 MOD3 SUPER/WIN/LOGO/MOD4 MOD5
 | allow_tearing | master switch for allowing tearing to occur. See [the Tearing page](../Tearing). | bool | false |
 
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 Prefer using `input:sensitivity` over `general:sensitivity` to avoid bugs, especially with Wine/Proton apps.
-{{< /hint >}}
+{{< /callout >}}
 
 ## Decoration
 
@@ -114,7 +113,7 @@ _Subcategory `decoration:blur:`_
 | popups | whether to blur popups (e.g. right-click menus) | bool | false | 
 | popups_ignorealpha | works like ignorealpha in layer rules. If pixel opacity is below set value, will not blur. [0.0 - 1.0] | float | 0.2 | 
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 A subcategory is a nested category:
 
 ```ini
@@ -130,16 +129,16 @@ decoration {
 ```
 
 Doing `decoration:blur {` is **invalid**!
-{{< /hint >}}
+{{< /callout >}}
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 
 `blur:size` and `blur:passes` have to be at least 1.
 
 Increasing `blur:passes` is necessary to prevent blur looking wrong on higher `blur:size` values,
 but remember that higher `blur:passes` will require more strain on the GPU.
 
-{{< /hint >}}
+{{< /callout >}}
 
 ## Animations
 
@@ -149,11 +148,11 @@ but remember that higher `blur:passes` will require more strain on the GPU.
 | first_launch_animation | enable first launch animation | bool | true |
 
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 
 _[More about Animations](../Animations)._
 
-{{< /hint >}}
+{{< /callout >}}
 
 ## Input
 
@@ -182,7 +181,7 @@ _[More about Animations](../Animations)._
 | float_switch_override_focus | If enabled (1 or 2), focus will change to the window under the cursor when changing from tiled-to-floating and vice versa. If 2, focus will also follow mouse on float-to-float switches. | int | 1 |
 | special_fallthrough | if enabled, having only floating windows in the special workspace will not block focusing windows in the regular workspace. | bool | false |
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 ## XKB Settings
 
 You can find a list of models, layouts, variants and options in [`/usr/share/X11/xkb/rules/base.lst`](file:///usr/share/X11/xkb/rules/base.lst). 
@@ -190,9 +189,9 @@ Alternatively, you can use the `localectl` command to discover what is available
 
 For switchable keyboard configurations, take a look at [the uncommon tips & tricks page entry](../Uncommon-tips--tricks/#switchable-keyboard-layouts).
 
-{{< /hint >}}
+{{< /callout >}}
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 ## Follow Mouse Cursor
 
 - 0 - Cursor movement will not change focus.
@@ -221,7 +220,7 @@ To mimic the Windows acceleration curves, take a look at [this script](https://g
 See [the libinput doc](https://wayland.freedesktop.org/libinput/doc/latest/pointer-acceleration.html) for more insights on
 how it works.
 
-{{< /hint >}}
+{{< /callout >}}
 
 
 ### Touchpad
@@ -374,11 +373,11 @@ _Subcategory `group:groupbar:`_
 
 ## Debug
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 
 Only for developers.
 
-{{< /hint >}}
+{{< /callout >}}
 
 | name | description | type | default |
 |---|---|---|---|

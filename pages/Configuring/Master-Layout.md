@@ -51,7 +51,7 @@ _category name `master`_
 
 params for the commands are separated by a single space
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 example usage:
 
 ```ini
@@ -60,7 +60,7 @@ bind=MOD,KEY,layoutmsg,cyclenext
 bind=MOD,KEY,layoutmsg,swapwithmaster master
 ```
 
-{{< /hint >}}
+{{< /callout >}}
 
 
 # Workspace Rules

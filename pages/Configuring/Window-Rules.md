@@ -1,12 +1,11 @@
 # Table of contents
 
-{{< toc >}}
 
 # Disclaimers
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 Window rules (both V1 and V2) are **case sensitive**. (e.g. `firefox` ≠ `Firefox`)
-{{< /hint >}}
+{{< /callout >}}
 
 # Window Rules V1
 
@@ -44,7 +43,7 @@ for multiple values like so:
 windowrulev2 = float,class:(kitty),title:(kitty)
 ```
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 In the case of dynamic window titles such as browser windows keep in mind how powerful regex is.
 
 for example a window rule of: `windowrule=opacity 0.3 override 0.3 override,title:(.*)(- Youtube)$` will match 
@@ -54,7 +53,7 @@ or other applications that contain the string for any reason.
 
 for the `windowrulev2 = float,class:(kitty),title:(kitty)` example, the `class:(kitty)` `WINDOW` field is what keeps the window rule
 specific to kitty terminals. 
-{{< /hint >}}
+{{< /callout >}}
 
 For now, the supported fields are:
 
@@ -74,12 +73,12 @@ onworkspace (how many windows are on the workspace) - int
 
 Keep in mind that you _have_ to declare at least one field, but not all.
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 
 To get more information about a window's class, title, XWayland status or its size,
 you can use `hyprctl clients`.
 
-{{< /hint >}}
+{{< /callout >}}
 
 ## Rules
 
@@ -139,7 +138,7 @@ Dynamic rules are re-evaluated every time a property changes.
 | immediate | forces the window to allow to be torn. See [the Tearing page](../Tearing). |
 | nearestneighbor | forces the window to use the nearest neigbor filtering. |
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 
 ## `group` window rule options
 
@@ -156,7 +155,7 @@ The `group` rule without options is a shorthand for `group set`.
 
 By default, `set` and `lock` only affect new windows once. The `always` qualifier makes them always effective.
 
-{{< /hint >}}
+{{< /callout >}}
 
 ### Example Rules
 
@@ -195,14 +194,14 @@ windowrulev2 = opacity 0.8 0.8,class:^(kitty)$
 -> all other floating windows will have opacity 0.5.
 
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 
 Opacity is _always_ a PRODUCT of all opacities. E.g. `active_opacity` to
 0.5 and windowrule opacity to 0.5 will result in a total opacity 0.25. You are
 allowed to set opacities over 1, but any opacity product over 1 will cause
 graphical glitches. E.g. `0.5 * 2 = 1`, and it will be fine, `0.5 * 4` will cause
 graphical glitches.
-{{< /hint >}}
+{{< /callout >}}
 
 # Layer Rules
 Some things in wayland are not windows, but layers. That includes for example most launchers, your status bar or wallpaper.

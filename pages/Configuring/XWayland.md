@@ -28,6 +28,6 @@ env = XCURSOR_SIZE,32
 
 The GDK_SCALE variable won't conflict with Wayland-native GTK programs.
 
-{{< hint type="important" >}}
+{{< callout type="important" >}}
 XWayland HiDPI patches are no longer supported. Do not use them.
-{{</ hint >}}
+{{</ callout >}}

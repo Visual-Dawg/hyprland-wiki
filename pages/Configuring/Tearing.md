@@ -7,9 +7,9 @@ To enable tearing:
  - Add `env = WLR_DRM_NO_ATOMIC,1` to your Hyprland config. This disables the usage of a newer kernel DRM API that doesn't support tearing yet.
  - Add an `immediate` windowrule to your game of choice. This makes sure that Hyprland will tear it.
 
-{{< hint type=note >}}
+{{< callout type=note >}}
 Please note that tearing will only be in effect when the game is in fullscreen and the only thing visible on the screen.
-{{< /hint >}}
+{{< /callout >}}
 
 Example snippet:
 ```env
@@ -22,19 +22,19 @@ env = WLR_DRM_NO_ATOMIC,1
 windowrulev2 = immediate, class:^(cs2)$
 ```
 
-{{< hint type=note >}}
+{{< callout type=note >}}
 `env = WLR_DRM_NO_ATOMIC,1` is not recommended. If your kernel ver is >= 6.8, you can remove it.
 
 For kernels < 6.8, this env is required.
 
 Check your kernel version with `uname -r`.
-{{< /hint >}}
+{{< /callout >}}
 
-{{< hint type=warning >}}
+{{< callout type=warning >}}
 If you experience graphical issues, you may be out of luck. Tearing support is experimental.
 
 See the likely culprits below.
-{{< /hint >}}
+{{< /callout >}}
 
 ## Common issues
 

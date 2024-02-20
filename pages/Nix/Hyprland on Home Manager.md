@@ -1,12 +1,12 @@
 For a list of available options, check the
 [Home Manager options](https://nix-community.github.io/home-manager/options.xhtml#opt-wayland.windowManager.hyprland.enable).
 
-{{< hint title=Note >}}
+{{< callout title=Note >}}
 
 - _(Required) NixOS Module_: enables critical components needed to run Hyprland
   properly
 - _(Optional) Home-manager module_: lets you declaratively configure Hyprland
-  {{< /hint >}}
+  {{< /callout >}}
 
 ## Installation
 
@@ -27,13 +27,13 @@ module.
 
 {{< tab "Flakes" >}}
 
-{{< hint >}}
+{{< callout >}}
 
 The flake module is merely an extension to the Home Manager downstream module.
 It is mainly used as a staging area for new options, so unless you're a tester
 you should use the downstream Home Manager module.
 
-{{< /hint >}}
+{{< /callout >}}
 
 The following snippet of code tries to show how to bring the Hyprland flake from
 the flake input and import it into the module system. Feel free to make any
@@ -74,13 +74,13 @@ Don't forget to replace `user@hostname` with your username and hostname!
 
 {{< tab "No flakes (with flake-compat)" >}}
 
-{{< hint >}}
+{{< callout >}}
 
 The flake module is merely an extension to the Home Manager downstream module.
 It is mainly used as a staging area for new options, so unless you're a tester
 you should use the downstream Home Manager module.
 
-{{< /hint >}}
+{{< /callout >}}
 
 The following snippet of code tries to show how to bring the Hyprland flake from
 the flake input and import it into the module system. Feel free to make any

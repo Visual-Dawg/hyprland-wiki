@@ -9,13 +9,13 @@ input {
 }
 ```
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 
 The first layout defined in the input section will be the one used for binds.
 
 For example: `us,ua` -> config binds would be e.g. `SUPER, A`, while on `ua,us` -> `SUPER, Cyrillic_ef`
 
-{{< /hint >}}
+{{< /callout >}}
 
 You can also bind a key to execute `hyprctl switchxkblayout` for more keybind freedom.
 See [Using hyprctl](../Using-hyprctl).
@@ -114,11 +114,11 @@ windowrule=noshadow, com-group_finity-mascot-Main
 windowrule=noborder, com-group_finity-mascot-Main
 ```
 
-{{< hint >}}
+{{< callout >}}
 
 The app indicator probably won't show, so you'll have to `killall -9 java` to kill them.
 
-{{< /hint >}}
+{{< /callout >}}
 
 ![Demo GIF of Spamton Shimeji](https://media.discordapp.net/attachments/810799100940255260/1032846469855727656/ezgif.com-gif-maker19.gif)
 

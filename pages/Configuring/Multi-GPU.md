@@ -1,6 +1,5 @@
 # Table of contents
 
-{{< toc >}}
 
 # General
 
@@ -44,7 +43,7 @@ So from the above outputs, we can match the bus IDs and determine that NVIDIA is
 After determining which "card" belongs to which GPU, we now have to tell
 Hyprland the GPU we want to use primarily.
 
-{{< hint type=info >}}
+{{< callout type=info >}}
 
 It is generally a good idea for laptops to use the integrated GPU as the primary
 renderer as this preserves battery life and is practically indistinguishable
@@ -52,7 +51,7 @@ from using the dedicated GPU on modern systems in most cases. Hyprland can be
 run on integrated GPUs just fine. The same principle applies for desktop setups
 with a lower and higher power rating GPUs respectively.
 
-{{< /hint >}}
+{{< /callout >}}
 
 We can do so by using the `WLR_DRM_DEVICES` variable.
 

@@ -1,6 +1,5 @@
 # Table of Contents
 
-{{< toc >}}
 
 # Basic
 
@@ -16,14 +15,14 @@ bind=SUPER_SHIFT,Q,exec,firefox
 
 will bind opening firefox to <key>SUPER</key> + <key>SHIFT</key> + <key>Q</key>
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 For binding keys without a modkey, leave it empty:
 
 ```ini
 bind=,Print,exec,grim
 ```
 
-{{< /hint >}}
+{{< /callout >}}
 
 _For a complete mod list, see [Variables](../Variables/#variable-types)._
 
@@ -190,10 +189,10 @@ RMB -> 273
 
 _for more, you can of course use `wev` to check._
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 Mouse binds, despite their name, behave like normal binds. You are free to use
 whatever keys / mods you please. When held, the mouse function will be activated.
-{{< /hint >}}
+{{< /callout >}}
 
 # Binding mods
 
@@ -231,12 +230,12 @@ bind=,mouse:276,pass,^(TeamSpeak 3)$
 
 Will pass MOUSE5 to TeamSpeak3.
 
-{{< hint type=important >}}
+{{< callout type=important >}}
 XWayland is a bit wonky. Make sure that what you're passing is a "global Xorg
 keybind", otherwise passing from a different XWayland app may not work.
 
 It works flawlessly with all native Wayland applications though.
-{{< /hint >}}
+{{< /callout >}}
 
 ## DBus Global Shortcuts
 
@@ -255,9 +254,9 @@ Bind it to whatever you want with the `global` dispatcher:
 bind = SUPERSHIFT, A, global, coolApp:myToggle
 ```
 
-{{< hint type=tip >}}
+{{< callout type=tip >}}
 Please note that this function will _only_ work with [XDPH](../../Useful-Utilities/Hyprland-desktop-portal).
-{{</ hint >}}
+{{</ callout >}}
 
 # Submaps
 
