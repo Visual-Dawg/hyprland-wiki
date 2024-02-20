@@ -2,7 +2,7 @@
 title: Uncommon tips & tricks
 ---
 
-# Switchable keyboard layouts
+## Switchable keyboard layouts
 
 The easiest way to accomplish this is to set this using XKB settings, for
 example:
@@ -42,7 +42,7 @@ keyboard layouts:
 grep 'grp:.*toggle' /usr/share/X11/xkb/rules/base.lst
 ```
 
-# Disabling keybinds with one master keybind
+## Disabling keybinds with one master keybind
 
 If you want to disable all keybinds with another keybind (make a keybind toggle
 of sorts) you can just use a submap with only a keybind to exit it.
@@ -54,7 +54,7 @@ bind=MOD,KEY,submap,reset
 submap=reset
 ```
 
-# Remap Caps-Lock to Ctrl
+## Remap Caps-Lock to Ctrl
 
 ```
 input {
@@ -62,7 +62,7 @@ input {
 }
 ```
 
-# Swap Caps-Lock and Escape
+## Swap Caps-Lock and Escape
 
 ```
 input {
@@ -70,7 +70,7 @@ input {
 }
 ```
 
-# Minimize Steam instead of killing
+## Minimize Steam instead of killing
 
 Steam will exit entirely when it's last window is closed using the `killactive`
 dispatcher. To minimize Steam to tray, use the following script to close
@@ -84,7 +84,7 @@ else
 fi
 ```
 
-# Window Dancing
+## Window Dancing
 
 Some XWayland games like Rhythm Doctor and Friday Night Funkin' mods like to
 move the windows by themselves, but that often doesn't work by default.
@@ -114,7 +114,7 @@ Click the GIF below to see a full demo video
 
 [![Demo GIF of Rhythm Doctor](https://cdn.discordapp.com/attachments/810799100940255260/1032843745864986644/ezgif.com-gif-maker18.gif)](https://pool.jortage.com/voringme/misskey/565b9dfb-125f-4ea0-9257-b371cb4c7195.mp4)
 
-## Shimeji
+### Shimeji
 
 To use Shimeji programs like
 [this](https://codeberg.org/thatonecalculator/spamton-linux-shimeji), set the
@@ -137,7 +137,7 @@ kill them.
 
 ![Demo GIF of Spamton Shimeji](https://media.discordapp.net/attachments/810799100940255260/1032846469855727656/ezgif.com-gif-maker19.gif)
 
-# Toggle animations/blur/etc hotkey
+## Toggle animations/blur/etc hotkey
 
 For increased performance in games, or for less distractions at a keypress
 

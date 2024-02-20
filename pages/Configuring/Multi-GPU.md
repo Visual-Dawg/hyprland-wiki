@@ -2,7 +2,7 @@
 title: Multi-GPU
 ---
 
-# General
+## General
 
 If your host machine uses multiple GPUs, you may want to primarily use one GPU
 for rendering all the elements for Hyprland including windows, animations, and
@@ -11,7 +11,7 @@ another for hardware acceleration for certain applications, etc.
 This setup is very common in the likes of gaming laptops, GPU-passthrough
 (without VFIO) capable hosts, and if you have multiple GPUs in general.
 
-# Detecting GPUs
+## Detecting GPUs
 
 For this case, the writer is taking the example of their laptop.
 
@@ -39,7 +39,7 @@ lrwxrwxrwx 1 root root 13 Jul 14 15:45 pci-0000:06:00.0-render -> ../renderD129
 So from the above outputs, we can match the bus IDs and determine that NVIDIA is
 `card0` and AMD is `card1`.
 
-# Telling Hyprland which GPU to use
+## Telling Hyprland which GPU to use
 
 After determining which "card" belongs to which GPU, we now have to tell
 Hyprland the GPU we want to use primarily.

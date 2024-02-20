@@ -5,13 +5,13 @@ title: Dwindle Layout
 Dwindle is a BSPWM-like layout, where every window on a workspace is a member of
 a binary tree.
 
-# Quirks
+## Quirks
 
 Dwindle splits are NOT PERMANENT. The split is determined dynamically with the
 W/H ratio of the parent node. If W > H, it's side-by-side. If H > W, it's
 top-and-bottom. You can make them permanent by enabling `preserve_split`.
 
-# Config
+## Config
 
 category name: `dwindle`
 
@@ -29,13 +29,13 @@ category name: `dwindle`
 | use_active_for_splits        | whether to prefer the active window or the mouse position for splits                                                                                                                                                                                               | bool  | true    |
 | default_split_ratio          | the default split ratio on window open. 1 means even 50/50 split. [0.1 - 1.9]                                                                                                                                                                                      | float | 1.0     |
 
-# Bind Dispatchers
+## Bind Dispatchers
 
 | dispatcher | description                              | params |
 | ---------- | ---------------------------------------- | ------ |
 | pseudo     | toggles the focused window's pseudo mode | none   |
 
-# Layout messages
+## Layout messages
 
 Dispatcher `layoutmsg` params:
 

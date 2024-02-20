@@ -2,7 +2,7 @@
 title: Status bars
 ---
 
-# Waybar
+## Waybar
 
 Waybar is a GTK status bar made specifically for wlroots compositors and
 supports Hyprland by default. To use it, it's recommended to use your distro's
@@ -16,24 +16,24 @@ from `/etc/xdg/waybar/` into `~/.config/waybar/`. Then, in
 For more info regarding configuration, see
 [The Waybar Wiki](https://github.com/Alexays/Waybar/wiki/Module:-Hyprland).
 
-## How to launch
+### How to launch
 
 After getting everything set up, you might want to check if Waybar is configured
 to your liking. To launch it, simply type `waybar` into your terminal. If you
 would like waybar to launch alongside hyprland, you can do this by adding a line
 to your hyprland configuration that reads `exec-once=waybar`
 
-## Waybar popups render behind the windows
+### Waybar popups render behind the windows
 
 In `~/.config/waybar/config`, make sure that you have the `layer` configuration
 set to `top` and not `bottom`.
 
-## Active workspace doesn't show up
+### Active workspace doesn't show up
 
 Replace `#workspaces button.focused` with `#workspaces button.active` in
 `~/.config/waybar/style.css`.
 
-## Scrolling through workspaces
+### Scrolling through workspaces
 
 Since there a lot of configuration options from `sway/workspaces` are missing,
 you should deduce some of them by yourself. In the case of scrolling, it should
@@ -47,14 +47,14 @@ look like this:
 }
 ```
 
-## Clicking on a workspace icon does not work!
+### Clicking on a workspace icon does not work!
 
 On the `hyprland/workspaces` module, add `"on-click": "activate"`. That's the
 purpose of the `sed` command used before building Waybar: the default way to
 select a workspace by clicking uses the `swaymsg`'s way, and thus it is required
 to edit this function to make it work with `hyprctl`.
 
-## Window title is missing
+### Window title is missing
 
 Follow the above instructions to make sure everything is working. The prefix for
 the window module that provides the title is `hyprland` not `wlr`. In your
@@ -74,14 +74,14 @@ configuration:
 },
 ```
 
-# Eww
+## Eww
 
 In order to use [Eww](https://github.com/elkowar/eww), you first have to install
 it, either using your distro's package manager, by searching `eww-wayland`, or
 by manually compiling. In the latter case, you can follow the
 [instructions](https://elkowar.github.io/eww).
 
-## Configuration
+### Configuration
 
 After you've successfully installed Eww, you can move onto configuring it. There
 are a few examples listed in the [Readme](https://github.com/elkowar/eww). It's
@@ -112,7 +112,7 @@ workspaces. It requires [bash](https://linux.die.net/man/1/bash),
 [socat](https://linux.die.net/man/1/socat),
 [jq](https://stedolan.github.io/jq/), and [Python 3](https://www.python.org/).
 
-### `~/.config/eww.yuck`
+#### `~/.config/eww.yuck`
 
 ```lisp
 ...
@@ -135,7 +135,7 @@ workspaces. It requires [bash](https://linux.die.net/man/1/bash),
 ...
 ```
 
-### `~/.config/eww/scripts/change-active-workspace`
+#### `~/.config/eww/scripts/change-active-workspace`
 
 ```sh
 #! /bin/bash
@@ -161,7 +161,7 @@ then
 fi
 ```
 
-### `~/.config/eww/scripts/get-active-workspace`
+#### `~/.config/eww/scripts/get-active-workspace`
 
 ```sh
 #!/usr/bin/env bash
@@ -172,7 +172,7 @@ socat -u UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - |
   stdbuf -o0 awk -F '>>|,' -e '/^workspace>>/ {print $2}' -e '/^focusedmon>>/ {print $3}'
 ```
 
-### `~/.config/eww/scripts/get-workspaces`
+#### `~/.config/eww/scripts/get-workspaces`
 
 ```sh
 #!/bin/bash
@@ -199,7 +199,7 @@ This widget simply displays the title of the active window. It requires
 [socat](https://linux.die.net/man/1/socat), and
 [jq](https://stedolan.github.io/jq/).
 
-### `~/.config/eww/eww.yuck`
+#### `~/.config/eww/eww.yuck`
 
 ```lisp
 ...
@@ -212,7 +212,7 @@ This widget simply displays the title of the active window. It requires
 ...
 ```
 
-### `~/.config/eww/scripts/get-window-title`
+#### `~/.config/eww/scripts/get-window-title`
 
 ```sh
 #!/bin/sh
@@ -222,26 +222,26 @@ socat -u UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | s
 
 </details>
 
-# Hybrid
+## Hybrid
 
 Like Waybar, [Hybrid](https://github.com/vars1ty/HybridBar) is a GTK status bar
 mainly focused for wlroots compositors.
 
 You can install it from the AUR by the name `hybrid-bar`.
 
-## Configuration
+### Configuration
 
 The configuration is done through JSON, more information is available
 [here](https://github.com/vars1ty/HybridBar).
 
-## How to launch
+### How to launch
 
 After configuring HybridBar, you can launch it by typing `hybrid-bar` into your
 terminal to try it out. It is also possible to set it to launch at start, to do
 this you can add a line to your hyprland configuration that reads
 `exec-once=hybrid-bar`
 
-### Blur
+#### Blur
 
 To activate blur, set `blurls=NAMESPACE` in your hyprland configuration, where
 `NAMESPACE` is the gtk-layer-shell namespace of your HybridBar. The default

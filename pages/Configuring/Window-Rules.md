@@ -2,8 +2,6 @@
 title: Window Rules
 ---
 
-# Disclaimers
-
 {{< callout type=warning >}}
 
 Window rules (both V1 and V2) are **case sensitive**. (e.g. `firefox` ≠
@@ -11,12 +9,12 @@ Window rules (both V1 and V2) are **case sensitive**. (e.g. `firefox` ≠
 
 {{< /callout >}}
 
-# Window Rules V1
+## Window Rules V1
 
 You can set window rules to achieve different behaviors from the active
 container.
 
-## Syntax
+### Syntax
 
 ```ini
 windowrule=RULE,WINDOW
@@ -35,7 +33,7 @@ windowrule=float,^(kitty)$
 windowrule=move 0 0,title:^(Firefox)(.*)$
 ```
 
-# Window Rules V2
+## Window Rules V2
 
 In order to allow more flexible rules, while retaining compatibility with the
 above rule system, window rules V2 were implemented.
@@ -224,7 +222,7 @@ graphical glitches.
 
 {{< /callout >}}
 
-# Layer Rules
+## Layer Rules
 
 Some things in wayland are not windows, but layers. That includes for example
 most launchers, your status bar or wallpaper.
@@ -240,7 +238,7 @@ layerrule = rule, address
 where `rule` is the rule and `namespace` is the namespace regex (find namespaces
 in `hyprctl layers`) or `address` is an address in the form of `address:0x[hex]`
 
-## Rules
+### Rules
 
 | rule              | description                                                                                                    |
 | ----------------- | -------------------------------------------------------------------------------------------------------------- |

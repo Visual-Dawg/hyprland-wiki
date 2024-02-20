@@ -2,7 +2,7 @@
 title: Monitors
 ---
 
-# General
+## General
 
 The general config of a monitor looks like this
 
@@ -116,7 +116,7 @@ monitor=desc:Chimei Innolux Corporation 0x150C,preferred,auto,1.5
 
 Remember to remove the `(portname)`!
 
-## Custom modelines
+### Custom modelines
 
 You can set up a custom modeline by changing the resolution field to a modeline,
 for example:
@@ -125,7 +125,7 @@ for example:
 monitor = DP-1, modeline 1071.101 3840 3848 3880 3920 2160 2263 2271 2277 +hsync -vsync, 0x0, 1
 ```
 
-## Disabling a monitor
+### Disabling a monitor
 
 To disable a monitor, use
 
@@ -142,7 +142,7 @@ screensaver style (just turn off the monitor) use the `dpms`
 
 {{</ callout >}}
 
-# Custom reserved area
+## Custom reserved area
 
 If your workflow requires custom reserved area, you can add it with
 
@@ -154,7 +154,7 @@ Where `TOP` `BOTTOM` `LEFT` `RIGHT` are integers in pixels of the reserved area
 to add. This does stack on top of the calculated one, (e.g. bars) but you may
 only use one of these rules per monitor in the config.
 
-# Extra args
+## Extra args
 
 You can combine extra arguments at the end of the monitor rule, examples:
 
@@ -164,7 +164,7 @@ monitor=eDP-1,2880x1800@90,0x0,1,transform,1,mirror,DP-2,bitdepth,10
 
 See bellow for more detail about each argument.
 
-## Mirrored displays
+### Mirrored displays
 
 If you want to mirror a display, add a `,mirror,[NAME]` at the end of the
 monitor rule, examples:
@@ -179,7 +179,7 @@ second monitor, so if mirroring a 1080p screen onto a 4K one, the resolution
 will still be 1080p on the 4K display. This also means squishing and stretching
 will occur on non-matching resolutions.
 
-## 10 bit support
+### 10 bit support
 
 If you want to enable 10 bit support for your display, add a `,bitdepth,10` at
 the end of the monitor rule, e.g.:
@@ -193,12 +193,12 @@ monitor=eDP-1,2880x1800@90,0x0,1,bitdepth,10
 
 **NOTE** Some applications do _not_support screen capture with 10 bit enabled.
 
-## VRR
+### VRR
 
 Per-display VRR can be done by adding `,vrr,X` where `X` is the mode from the
 [variables page](../Variables).
 
-# Rotating
+## Rotating
 
 If you want to rotate a monitor, add a `,transform,X` at the end of the monitor
 rule, where `X` corresponds to a transform number, e.g.:
@@ -238,10 +238,10 @@ This will be done automatically when
 
 {{< /callout >}}
 
-# Default workspace
+## Default workspace
 
 See [Workspace Rules](../Workspace-Rules).
 
-## Binding workspaces to a monitor
+### Binding workspaces to a monitor
 
 See [Workspace Rules](../Workspace-Rules).

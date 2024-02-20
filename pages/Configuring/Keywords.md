@@ -26,7 +26,7 @@ three_param_keyword = A, B,  # OK
 
 {{< /callout >}}
 
-# Executing
+## Executing
 
 you can execute a shell script on startup of the compositor or on each time it's
 reloaded.
@@ -35,7 +35,7 @@ reloaded.
 
 `exec=command` will execute on each reload
 
-# Defining variables
+## Defining variables
 
 You can define your own custom variables like this:
 
@@ -61,7 +61,7 @@ You ARE allowed to do this:
 col.active_border=ff$MyRedValue1111
 ```
 
-# Sourcing (multi-file)
+## Sourcing (multi-file)
 
 Use the `source` keyword to source another file.
 
@@ -76,14 +76,14 @@ And Hyprland will enter that file and parse it like a Hyprland config.
 Please note it's LINEAR. Meaning lines above the `source=` will be parsed first,
 then lines inside `~/.config/hypr/myColors.conf`, then lines below.
 
-# Gestures
+## Gestures
 
 Use something like
 [libinput-gestures](https://github.com/bulletmark/libinput-gestures), with
 `hyprctl` if you want to expand Hyprland's gestures beyond what's offered in
 [Variables](../Variables).
 
-# Per-device input configs
+## Per-device input configs
 
 Per-device config options will overwrite your options set in the `input`
 section. It's worth noting that ONLY values explicitly changed will be
@@ -142,7 +142,7 @@ as if you were on `us`.
 
 {{< /callout >}}
 
-# Wallpapers
+## Wallpapers
 
 The hyprland background you see when you first start Hyprland is **NOT A
 WALLPAPER**, it's the default image rendered at the bottom of the render stack.
@@ -153,7 +153,7 @@ To set a wallpaper, use a wallpaper utility like
 
 More can be found in [Useful Utilities](../../Useful-Utilities).
 
-# Blurring layerSurfaces
+## Blurring layerSurfaces
 
 LayerSurfaces are not windows. These are for example: Your wallpapers,
 notification overlays, bars, etc.
@@ -180,7 +180,7 @@ For example:
 layerrule = unset,NAMESPACE
 ```
 
-# Setting the environment
+## Setting the environment
 
 {{< callout type=info >}}
 

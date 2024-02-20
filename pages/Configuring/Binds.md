@@ -2,7 +2,7 @@
 title: Binds
 ---
 
-# Basic
+## Basic
 
 ```ini
 bind=MODS,key,dispatcher,params
@@ -50,9 +50,9 @@ bind=SUPER,code:28,exec,amongus
 Will bind <key>SUPER</key> + <key>T</key>. (<key>T</key> is keycode 28.) - You
 can also use `xev` or `wev` to find keycodes.
 
-# Misc
+## Misc
 
-## Unbind
+### Unbind
 
 You can also unbind with `unbind`, e.g.:
 
@@ -66,7 +66,7 @@ May be useful for dynamic keybindings with `hyprctl`.
 hyprctl keyword unbind SUPER,O
 ```
 
-## Mouse buttons
+### Mouse buttons
 
 You can also bind mouse buttons, by prefacing the mouse keycode with `mouse:`,
 for example:
@@ -77,7 +77,7 @@ bind=SUPER,mouse:272,exec,amongus
 
 will bind it to <key>SUPER</key> + <key>LMB</key>.
 
-## Only modkeys
+### Only modkeys
 
 For binding only modkeys, you need to use the TARGET modmask (with the
 activating mod) and the `r` flag, e.g.:
@@ -86,7 +86,7 @@ activating mod) and the `r` flag, e.g.:
 bindr=SUPERALT,Alt_L,exec,amongus
 ```
 
-## Mouse wheel
+### Mouse wheel
 
 You can also bind the mouse wheel with `mouse_up` and `mouse_down` (or
 `mouse_left` and `mouse_right` if your wheel supports horizontal scrolling):
@@ -97,7 +97,7 @@ bind=SUPER,mouse_down,workspace,e-1
 
 (control the reset time with `binds:scroll_event_delay`)
 
-## Switches
+### Switches
 
 Useful for binding e.g. the lid close/open event:
 
@@ -112,7 +112,7 @@ bindl=,switch:off:[switch name],exec,hyprctl keyword monitor "eDP-1, disable"
 
 check out your switches in `hyprctl devices`.
 
-## Multiple binds to one key
+### Multiple binds to one key
 
 You can trigger multiple actions with one keybind by assigning multiple binds to
 one combination, e.g.:
@@ -125,7 +125,7 @@ bind = SUPER,Tab,bringactivetotop,   # bring it to the top
 
 The keybinds will be executed in the order they were created. (top to bottom)
 
-# Bind flags
+## Bind flags
 
 `bind` supports flags in this format:
 
@@ -166,7 +166,7 @@ bindr=SUPER, SUPER_L, exec, pkill wofi || wofi
 # See Mouse Binds section for bindm usage
 ```
 
-# Mouse Binds
+## Mouse Binds
 
 Mouse binds are binds that heavily rely on a mouse, usually its movement. They
 will have one less arg, and look for example like this:
@@ -202,7 +202,7 @@ activated.
 
 {{< /callout >}}
 
-# Binding mods
+## Binding mods
 
 You can bind a mod alone like this:
 
@@ -210,9 +210,9 @@ You can bind a mod alone like this:
 bindr=ALT,Alt_L,exec,amongus
 ```
 
-# Global Keybinds
+## Global Keybinds
 
-## Classic
+### Classic
 
 Yes, you heard this right, Hyprland does support global keybinds for ALL apps,
 including OBS, Discord, Firefox, etc.
@@ -248,7 +248,7 @@ It works flawlessly with all native Wayland applications though.
 
 {{< /callout >}}
 
-## DBus Global Shortcuts
+### DBus Global Shortcuts
 
 Some applications may already support the GlobalShortcuts portal in
 xdg-desktop-portal.
@@ -273,7 +273,7 @@ Please note that this function will _only_ work with
 
 {{</ callout >}}
 
-# Submaps
+## Submaps
 
 If you want keybind submaps, also known as _modes_ or _groups_, for example if
 you press <key>ALT</key> + <key>R</key>, you can enter a "resize" mode, resize
@@ -330,9 +330,9 @@ submap=reset
 This works because the binds are executed in the order they appear, and
 assigning multiple actions per bind is possible.
 
-# Example Binds
+## Example Binds
 
-## Media
+### Media
 
 These binds set the expected behavior for regular keyboard media volume keys,
 including when the screen is locked:

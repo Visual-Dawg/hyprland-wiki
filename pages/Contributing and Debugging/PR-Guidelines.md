@@ -2,19 +2,19 @@
 title: PR Guidelines
 ---
 
-# PR Requirements
+## PR Requirements
 
 - Clean, not hacky code
 - Described changes and _why_ they were there
 - Following the style (see below)
 
-## Code Style
+### Code Style
 
 Hyprland's code style is governed by the `.clang-format` file.
 
 Make sure to format accordingly whenever you make a PR.
 
-## Some code FAQ
+### Some code FAQ
 
 > Why is the config variable getting so weird?
 

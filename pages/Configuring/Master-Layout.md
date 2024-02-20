@@ -9,7 +9,7 @@ than the default left/right split.
 
 ![master1](https://user-images.githubusercontent.com/43317083/179357849-321f042c-f536-44b3-9e6f-371df5321836.gif)
 
-# Config
+## Config
 
 _category name `master`_
 
@@ -27,7 +27,7 @@ _category name `master`_
 | smart_resizing       | if enabled, resizing direction will be determined by the mouse's position on the window (nearest to which corner). Else, it is based on the window's tiling position.                             | bool   | true    |
 | drop_at_cursor       | when enabled, dragging and dropping windows will put them at the cursor position. Otherwise, when dropped at the stack side, they will go to the top/bottom of the stack depending on new_on_top. | bool   | true    |
 
-# Dispatchers
+## Dispatchers
 
 `layoutmsg` commands:
 
@@ -67,7 +67,7 @@ bind=MOD,KEY,layoutmsg,swapwithmaster master
 
 {{< /callout >}}
 
-# Workspace Rules
+## Workspace Rules
 
 `layoutopt` rules: | rule | description | type | | --- | --- | --- | |
 orientation:[o] | Sets the orientation of a workspace. For available

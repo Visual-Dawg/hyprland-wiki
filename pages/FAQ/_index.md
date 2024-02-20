@@ -2,7 +2,7 @@
 title: FAQ
 ---
 
-# My apps are pixelated
+### My apps are pixelated
 
 This just means they are running through XWayland, which physically cannot scale
 by fractional amounts.
@@ -12,7 +12,7 @@ To force them to run in wayland-native mode, see
 
 If they can't, see [the XWayland page](../../Configuring/XWayland).
 
-# Nothing renders / screen is empty / crash on opening first app
+### Nothing renders / screen is empty / crash on opening first app
 
 Possible causes:
 
@@ -29,13 +29,13 @@ and try compiling with LEGACY_RENDERER
 _For more info about bugs and crashes, see this_
 _[wiki page](../../Crashes-and-Bugs)_
 
-# Me cursor no render?
+### Me cursor no render?
 
 Are you on NVIDIA? If so, then you have been a naughty boy and haven't listened
 to my tips on other pages. Use the `WLR_NO_HARDWARE_CURSORS=1` environment
 variable.
 
-# My external monitor is blank / doesn't render / receives no signal (laptop)
+### My external monitor is blank / doesn't render / receives no signal (laptop)
 
 For Nvidia graphics - This issue appears to be resolved when using Nvidia
 Drivers 525.60.11 or later, but it may persist with older drivers.
@@ -59,7 +59,7 @@ they don't, you're unfortunately out of luck._
 You might try a USB-C to HDMI adapter though, maybe that could route the
 external monitor through the iGPU.
 
-# How do I screenshot?
+### How do I screenshot?
 
 Install `grim` and `slurp`
 
@@ -78,28 +78,28 @@ For recording videos, [wf-recorder](https://github.com/ammen99/wf-recorder),
 [wl-screenrec](https://github.com/russelltg/wl-screenrec) or
 [OBS Studio](https://obsproject.com/) could be used.
 
-# Screenshare / OBS no worky
+### Screenshare / OBS no worky
 
 Check [Screensharing](../Useful-Utilities/Screen-Sharing).
 
 Also install `qt6-wayland` if you plan to use obs.
 
-# How do I change my wallpaper?
+### How do I change my wallpaper?
 
 See [Wallpapers](../Useful-Utilities/Wallpapers).
 
-# How heavy is this?
+### How heavy is this?
 
 Not that much heavier than Xorg. If you want maximum performance, consider
 turning off the blur and animations.
 
-# My monitor no worky
+### My monitor no worky
 
 Try changing the mode in your config. If your preferred one doesn't work, try a
 lower one. A good way to list all modes is to get `wlr-randr` and do a
 `wlr-randr --dryrun`
 
-# My monitor has flickering brightness when I turn on VRR
+### My monitor has flickering brightness when I turn on VRR
 
 Change the VRR option to `2` (fullscreen), so that it is only used in games.
 This happens because the brightness on some monitors can depends on the refresh
@@ -107,7 +107,7 @@ rate, and rapidly changing refresh rates (for example, when the screen
 momentarily updates after pressing a key) will cause rapid changes in
 brightness.
 
-# How do I update?
+### How do I update?
 
 Open a terminal where you cloned the repo.
 
@@ -119,11 +119,11 @@ make all && sudo make install
 If you are using the AUR (hyprland-git) package, you will need to cleanbuild to
 update the package. Paru has been problematic with updating before, use Yay.
 
-# How do I screen lock?
+### How do I screen lock?
 
 Use a wayland-compatible locking utility using WLR protocols, e.g. `swaylock`.
 
-# How do I change me mouse cursor?
+### How do I change me mouse cursor?
 
 1. Set the GTK cursor using [nwg-look](https://github.com/nwg-piotr/nwg-look).
 2. Add `exec-once=hyprctl setcursor [THEME] [SIZE]` to your config and restart
@@ -148,21 +148,21 @@ according to the
 Make sure to also edit `~/.config/gtk-4.0/settings.ini` and `~/.gtkrc-2.0` if
 _not_ using a tool (like `nwg-look`).
 
-# GTK Settings no work / whatever
+### GTK Settings no work / whatever
 
 [https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland](https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland)
 
-# My \[program name\] is freezing
+### My \[program name\] is freezing
 
 Make sure you have a notification daemon running, for example `dunst`. Autostart
 it with the `exec-once` keyword.
 
-# Waybar workspaces no worky???
+### Waybar workspaces no worky???
 
 Waybar has a set of caveats or settings that you need to be aware of. See
 [Status bars](../Useful-Utilities/Status-Bars) for solutions.
 
-# How do I autostart my favorite apps?
+### How do I autostart my favorite apps?
 
 Using the window rules to assign apps to workspace you can open a bunch of
 applications on various workspaces. The following method will start these apps
@@ -177,7 +177,7 @@ exec-once=[workspace 3 silent] mailspring
 exec-once=[workspace 4 silent] firefox
 ```
 
-# How do I move my favorite workspaces to a new monitor when I plug it in?
+### How do I move my favorite workspaces to a new monitor when I plug it in?
 
 if you want workspaces to automatically go to a monitor upon connection, use the
 following:
@@ -209,13 +209,13 @@ if you want workspaces 1 2 4 5 to go to monitor 1 when connecting it.
 
 Please note this requires `socat` to be installed.
 
-# My tablet no worky??
+### My tablet no worky??
 
 Use [Open Tablet Driver](https://github.com/OpenTabletDriver/OpenTabletDriver)
 to configure your tablet. In the future it will be supported in the config.
 Until then, OTD is the way to go.
 
-# Some of my apps take a really long time to open...?
+### Some of my apps take a really long time to open...?
 
 _~/.config/hypr/hyprland.conf_
 
@@ -241,7 +241,7 @@ sleep 4
 launched with `exec-once` should fix all issues. Adjust the sleep durations to
 taste.
 
-# How do I export envvars for Hyprland?
+### How do I export envvars for Hyprland?
 
 See [Environment Variables](../Configuring/Environment-variables)
 
@@ -251,7 +251,7 @@ The `env` keyword is used for this purpose. For example:
 env = XDG_CURRENT_DESKTOP,Hyprland
 ```
 
-# How to disable middle-click paste?
+### How to disable middle-click paste?
 
 You can simply intercept the middle-click action all together, via hyprland
 binds for example. The drawbacks to this solution are that 1. it disables the
@@ -282,7 +282,7 @@ copy -> found copied text...). Therefore this method is not recommended.**
 
 </details>
 
-# How do I make Hyprland draw as little power as possible on my laptop?
+### How do I make Hyprland draw as little power as possible on my laptop?
 
 **_Useful Optimizations_**:
 
@@ -292,17 +292,17 @@ copy -> found copied text...). Therefore this method is not recommended.**
 - `misc:vfr = true`, since it'll lower the amount of sent frames when nothing is
   happening on-screen.
 
-# How to fix games with window dancing?
+### How to fix games with window dancing?
 
 Read [this trick](../Configuring/Uncommon-tips--tricks/#window-dancing).
 
-# My apps take a long time to start / can't screenshare
+### My apps take a long time to start / can't screenshare
 
 See [The XDPH Page](../Useful-Utilities/Hyprland-desktop-portal).
 
 You most likely have multiple portal impls / an impl is failing to launch.
 
-# My screenshot utilities won't work with multiple screens
+### My screenshot utilities won't work with multiple screens
 
 Some programs like flameshot (currently) has limited wayland support so on most
 Wayland compositors, you will have to do few tweaks. For Hyprland, you can add
@@ -314,7 +314,7 @@ windowrulev2=move 0 0,title:^(flameshot)
 windowrulev2=nofullscreenrequest,title:^(flameshot)
 ```
 
-# I cannot bind SUPER as my mod key on my laptop
+### I cannot bind SUPER as my mod key on my laptop
 
 Many laptops have a built-in function to toggle `SUPER` between single key press
 mode and hold mode. This is usually indicated by a padlock on the `SUPER` key.
@@ -327,7 +327,7 @@ On most laptops this can be fixed by pressing `FN+SUPER` and verified in `wev`.
 You should be able to hold `SUPER` and not see an instant release event. In case
 `FN+SUPER` doesn't work, consult your laptop's manual.
 
-# My VM doesn't receive keybinds I have set in Hyprland
+### My VM doesn't receive keybinds I have set in Hyprland
 
 This is expected, as Hyprland takes precedence.
 
@@ -347,7 +347,7 @@ keybinds and passes them on to the vm.
 
 Then, pressing `SUPER + Escape` will leave that mode.
 
-# Some of my drop-down/pop-up windows in apps disappear
+### Some of my drop-down/pop-up windows in apps disappear
 
 In some apps like Steam or VSCode, the drop-down windows may disappear if you
 hover over them. This can be fixed with window rules.
@@ -379,7 +379,7 @@ If the pop-up disappears immediately, you can use:
 windowrulev2 = minsize 1 1, title:^(TITLE)$, class:^(CLASS)$
 ```
 
-# Steam's file picker no worky
+### Steam's file picker no worky
 
 On instances where you have a steam library on another drive that you have to
 add, Hyprland's file picker would not normally appear when selecting a directory

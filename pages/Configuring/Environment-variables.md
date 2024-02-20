@@ -32,13 +32,13 @@ Please avoid putting those environment variables in /etc/environment. That will
 cause all sessions (including Xorg ones) to pick up your wayland-specific
 environment on traditional Linux distros.
 
-# Hyprland Environment Variables
+## Hyprland Environment Variables
 
 - `HYPRLAND_LOG_WLR=1` - Enables more verbose logging of wlroots.
 - `HYPRLAND_NO_RT=1` - Disables realtime priority setting by Hyprland.
 - `HYPRLAND_NO_SD_NOTIFY=1` - If systemd, disables the `sd_notify` calls.
 
-# Toolkit Backend Variables
+## Toolkit Backend Variables
 
 - `GDK_BACKEND=wayland,x11` - GTK: Use wayland if available, fall back to x11 if
   not.
@@ -49,7 +49,7 @@ environment on traditional Linux distros.
 - `CLUTTER_BACKEND=wayland` - Clutter package already has wayland enabled, this
   variable will force Clutter applications to try and use the Wayland backend
 
-# XDG Specifications
+## XDG Specifications
 
 - `XDG_CURRENT_DESKTOP=Hyprland`
 - `XDG_SESSION_TYPE=wayland`
@@ -59,7 +59,7 @@ XDG specific environment variables are often detected through portals and
 applications that may set those for you, however it is not a bad idea to set
 them explicitly.
 
-# Qt Variables
+## Qt Variables
 
 - `QT_AUTO_SCREEN_SCALE_FACTOR=1` -
   [(From the Qt documentation)](https://doc.qt.io/qt-5/highdpi.html) enables
@@ -71,7 +71,7 @@ them explicitly.
 - `QT_QPA_PLATFORMTHEME=qt5ct` - Tells Qt based applications to pick your theme
   from qt5ct, use with Kvantum.
 
-# NVIDIA Specific
+## NVIDIA Specific
 
 To force GBM as a backend, set the following environment variables:
 
@@ -101,7 +101,7 @@ To force GBM as a backend, set the following environment variables:
 - `WLR_DRM_NO_ATOMIC=1` - use legacy DRM interface instead of atomic mode
   setting. Might fix flickering issues.
 
-# Theming Related Variables
+## Theming Related Variables
 
 - `GTK_THEME` - Set a GTK theme manually, for those who want to avoid appearance
   tools such as lxappearance or nwg-look

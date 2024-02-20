@@ -2,7 +2,7 @@
 title: Animations
 ---
 
-# General
+## General
 
 Animations are declared with the `animation` keyword.
 
@@ -24,7 +24,7 @@ can omit further args.
 The animations are a tree. If an animation is unset, it will inherit its
 parent's values. See [the animation tree](#animation-tree).
 
-## Examples
+### Examples
 
 ```ini
 animation=workspaces,1,8,default
@@ -32,7 +32,7 @@ animation=windows,1,10,myepiccurve,slide
 animation=fade,0
 ```
 
-## Animation tree
+### Animation tree
 
 ```txt
 global
@@ -52,7 +52,7 @@ global
     ↳ specialWorkspace - styles: same as workspaces
 ```
 
-# Curves
+## Curves
 
 Defining your own Bezier curve can be done with the `bezier` keyword:
 
@@ -66,13 +66,13 @@ good website to design your bezier can be found
 but if you want to instead choose from a list of beziers, you can check out
 [easings.net](https://easings.net).
 
-## Example
+### Example
 
 ```ini
 bezier=overshot,0.05,0.9,0.1,1.1
 ```
 
-# Extras
+### Extras
 
 For animation style `popin` in `windows`, you can specify a minimum percentage
 to start from. For example, the following will make the animation 80% -> 100% of

@@ -5,7 +5,7 @@ title: Dispatchers
 Please keep in mind some layout-specific dispatchers will be listed in the
 layout pages (See the sidebar).
 
-# Parameter explanation
+## Parameter explanation
 
 | Param type   | Description                                                                                                                                                                                                                           |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ layout pages (See the sidebar).
 | floatvalue   | a relative float delta (e.g `-0.2` or `+0.2`) or `exact` followed by a the exact float value (e.g. `exact 0.5`)                                                                                                                       |
 | zheight      | `top` or `bottom`                                                                                                                                                                                                                     |
 
-# List of Dispatchers
+## List of Dispatchers
 
 | Dispatcher                     | Description                                                                                                                                                                                                                   | Params                                                                                                                                                                       |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -86,7 +86,7 @@ bind = MOD,KEY,exec,sleep 1 && hyprctl dispatch dpms off
 
 {{< /callout >}}
 
-## Grouped (tabbed) windows
+### Grouped (tabbed) windows
 
 Hyprland allows you to make a group from the current active window with the
 `togglegroup` bind dispatcher.
@@ -108,7 +108,7 @@ You can prevent a window from being added to group or becoming a group with the
 `movewindow` if current active window or window in direction has this property
 set.
 
-# Workspaces
+## Workspaces
 
 You have eight choices:
 
@@ -146,7 +146,7 @@ Neither `0` nor negative numbers are allowed.
 
 {{< /callout >}}
 
-# Special Workspace
+## Special Workspace
 
 A special workspace is what is called a "scratchpad" in some other places. A
 workspace that you can toggle on/off on any monitor.
@@ -167,7 +167,7 @@ bind = SUPER, C, movetoworkspace, special
 #To see the hidden window you can use the togglespecialworkspace dispatcher mentioned above.
 ```
 
-# Executing with rules
+## Executing with rules
 
 The `exec` dispatcher supports adding rules. Please note some windows might work
 better, some worse. It records the PID of the spawned process and uses that. If

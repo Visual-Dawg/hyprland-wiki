@@ -12,8 +12,6 @@ the terminal.
 If it's not, go to the repo root and `/hyprctl`. Issue a `make all` and then
 `sudo cp ./hyprctl /usr/bin`.
 
-# Using Hyprctl
-
 {{< callout type=warning >}}
 
 _hyprctl_ calls will be dispatched by the compositor _synchronously_, meaning

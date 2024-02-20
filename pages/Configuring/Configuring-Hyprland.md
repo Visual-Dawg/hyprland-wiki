@@ -25,7 +25,7 @@ the toggleable / numerical options.
 
 {{< /callout >}}
 
-# Line style
+## Line style
 
 Every config line is a command followed by a value.
 
@@ -46,19 +46,19 @@ COMMAND = VALUE
 
 is valid.
 
-## Comments
+### Comments
 
 Comments are started with the `#` character.
 
 If you want to escape it (put an actual `#` and not start a comment) you can use
 `##`. It will be turned into a single `#` that WILL be a part of your line.
 
-# Basic configuring
+## Basic configuring
 
 To configure the "options" of Hyprland, animations, styling, etc. see
 [Variables](../Variables).
 
-# Advanced configuring
+## Advanced configuring
 
 Some keywords (binds, curves, execs, monitors, etc.) are not variables but
 define special behavior.

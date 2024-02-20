@@ -11,7 +11,7 @@ animations, etc. see the sidebar. For anything else, see
 Please keep in mind some options that are layout-specific will be documented in
 the layout pages and not here. (See the Sidebar for Dwindle and Master layouts)
 
-# Variable types
+## Variable types
 
 | type     | description                                                                                                                                                                                                                                                  |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -44,9 +44,9 @@ SHIFT CAPS CTRL/CONTROL ALT MOD2 MOD3 SUPER/WIN/LOGO/MOD4 MOD5
 
 {{< /callout >}}
 
-# Sections
+## Sections
 
-## General
+### General
 
 | name                      | description                                                                                                                      | type     | default    |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
@@ -77,7 +77,7 @@ especially with Wine/Proton apps.
 
 {{< /callout >}}
 
-## Decoration
+### Decoration
 
 | name                 | description                                                                                                       | type  | default       |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------- | ----- | ------------- |
@@ -99,7 +99,7 @@ especially with Wine/Proton apps.
 | dim_around           | how much the `dimaround` window rule should dim by. [0.0 - 1.0]                                                   | float | 0.4           |
 | screen_shader        | a path to a custom shader to be applied at the end of rendering. See `examples/screenShader.frag` for an example. | str   | \[\[Empty\]\] |
 
-### Blur
+#### Blur
 
 _Subcategory `decoration:blur:`_
 
@@ -150,7 +150,7 @@ strain on the GPU.
 
 {{< /callout >}}
 
-## Animations
+### Animations
 
 | name                   | description                   | type | default |
 | ---------------------- | ----------------------------- | ---- | ------- |
@@ -163,7 +163,7 @@ _[More about Animations](../Animations)._
 
 {{< /callout >}}
 
-## Input
+### Input
 
 | name                        | description                                                                                                                                                                                                                                                                                                                                                             | type  | default       |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ------------- |
@@ -192,7 +192,7 @@ _[More about Animations](../Animations)._
 
 {{< callout type=info >}}
 
-## XKB Settings
+### XKB Settings
 
 You can find a list of models, layouts, variants and options in
 [`/usr/share/X11/xkb/rules/base.lst`](file:///usr/share/X11/xkb/rules/base.lst).
@@ -206,7 +206,7 @@ For switchable keyboard configurations, take a look at
 
 {{< callout type=info >}}
 
-## Follow Mouse Cursor
+### Follow Mouse Cursor
 
 - 0 - Cursor movement will not change focus.
 - 1 - Cursor movement will always change focus to the window under the cursor.
@@ -215,15 +215,15 @@ For switchable keyboard configurations, take a look at
 - 3 - Cursor focus will be completely separate from keyboard focus. Clicking on
   a window will not change keyboard focus.
 
-## Custom accel profiles
+### Custom accel profiles
 
-### `accel_profile`
+#### `accel_profile`
 
 `custom <step> <points...>`
 
 for example `custom 200 0.0 0.5`
 
-### `scroll_points`
+#### `scroll_points`
 
 NOTE: Only works when `accel_profile` is set to `custom`.
 
@@ -240,7 +240,7 @@ for more insights on how it works.
 
 {{< /callout >}}
 
-### Touchpad
+#### Touchpad
 
 _Subcategory `input:touchpad:`_
 
@@ -256,7 +256,7 @@ _Subcategory `input:touchpad:`_
 | drag_lock               | When enabled, lifting the finger off for a short time while dragging will not drop the dragged item. [libinput#tap-and-drag](https://wayland.freedesktop.org/libinput/doc/latest/tapping.html#tap-and-drag)                                                                                            | bool  | false         |
 | tap-and-drag            | Sets the tap and drag mode for the touchpad                                                                                                                                                                                                                                                            | bool  | false         |
 
-### Touchdevice
+#### Touchdevice
 
 _Subcategory `input:touchdevice:`_
 
@@ -266,7 +266,7 @@ _Subcategory `input:touchdevice:`_
 | output    | the monitor to bind touch devices. Empty means unset and will use the current / autodetected.                                      | string | \[\[Empty\]\] |
 | enabled   | Whether input is enabled for touch devices.                                                                                        | bool   | true          |
 
-### Tablet
+#### Tablet
 
 _Subcategory `input:tablet:`_
 
@@ -278,11 +278,11 @@ _Subcategory `input:tablet:`_
 | region_size     | size of the mapped region. When this variable is set, tablet input will be mapped to the region. [0, 0] or invalid size means unset. | vec2   | [0, 0]        |
 | relative_input  | whether the input should be relative                                                                                                 | bool   | false         |
 
-## Per-device input config
+### Per-device input config
 
 Described [here](../Keywords#per-device-input-configs).
 
-## Gestures
+### Gestures
 
 | name                                     | description                                                                                                                                  | type  | default |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ------- |
@@ -299,7 +299,7 @@ Described [here](../Keywords#per-device-input-configs).
 | workspace_swipe_numbered                 | if enabled, swiping will swipe on consecutive numbered workspaces.                                                                           | bool  | false   |
 | workspace_swipe_use_r                    | if enabled, swiping will use the `r` prefix instead of the `m` prefix for finding workspaces. (requires disabled `workspace_swipe_numbered`) | bool  | false   |
 
-## Group
+### Group
 
 | name                       | description                                                                           | type     | default    |
 | -------------------------- | ------------------------------------------------------------------------------------- | -------- | ---------- |
@@ -310,7 +310,7 @@ Described [here](../Keywords#per-device-input-configs).
 | col.border_locked_active   | active locked group border color                                                      | gradient | 0x66ff5500 |
 | col.border_locked_inactive | inactive locked group border color                                                    | gradient | 0x66775500 |
 
-### Groupbar
+#### Groupbar
 
 _Subcategory `group:groupbar:`_
 
@@ -330,7 +330,7 @@ _Subcategory `group:groupbar:`_
 | col.locked_active   | active locked group border color                              | gradient | 0x66ff5500 |
 | col.locked_inactive | inactive locked group border color                            | gradient | 0x66775500 |
 
-## Misc
+### Misc
 
 | name                             | description                                                                                                                                                                                                                                                           | type  | default       |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ------------- |
@@ -363,7 +363,7 @@ _Subcategory `group:groupbar:`_
 | close_special_on_empty           | close the special workspace if the last window is removed                                                                                                                                                                                                             | bool  | true          |
 | new_window_takes_over_fullscreen | if there is a fullscreen window, whether a new tiled window opened should replace the fullscreen one or stay behind. 0 - behind, 1 - takes over, 2 - unfullscreen the current fullscreen window [0/1/2]                                                               | int   | 0             |
 
-## Binds
+### Binds
 
 | name                        | description                                                                                                                                                                               | type | default |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- | ------- |
@@ -376,20 +376,20 @@ _Subcategory `group:groupbar:`_
 | ignore_group_lock           | If enabled, dispatchers like `moveintogroup`, `moveoutofgroup` and `movewindoworgroup` will ignore lock per group.                                                                        | bool | false   |
 | movefocus_cycles_fullscreen | If enabled, when on a fullscreen window, `movefocus` will cycle fullscreen, if not, it will move the focus in a direction.                                                                | bool | true    |
 
-## XWayland
+### XWayland
 
 | name                 | description                                                                                    | type | default |
 | -------------------- | ---------------------------------------------------------------------------------------------- | ---- | ------- |
 | use_nearest_neighbor | uses the nearest neigbor filtering for xwayland apps, making them pixelated rather than blurry | bool | true    |
 | force_zero_scaling   | forces a scale of 1 on xwayland windows on scaled displays.                                    | bool | false   |
 
-## OpenGL
+### OpenGL
 
 | name                | description                                                                                                         | type | default |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------- | ---- | ------- |
 | nvidia_anti_flicker | reduces flickering on nvidia at the cost of possible frame drops on lower-end GPUs. On non-nvidia, this is ignored. | bool | true    |
 
-## Debug
+### Debug
 
 {{< callout type=warning >}}
 
@@ -410,7 +410,7 @@ Only for developers.
 | watchdog_timeout     | sets the timeout in seconds for watchdog to abort processing of a signal of the main thread. Set to 0 to disable. | int  | 5       |
 | disable_scale_checks | disables verifying of the scale factors. Will result in pixel alignment and rounding errors.                      | bool | false   |
 
-## More
+### More
 
 There are more config options described in other pages, which are layout- or
 circumstance-specific. See the sidebar for more pages.
