@@ -1,6 +1,3 @@
-# Table of contents
-
-
 # General
 
 The general config of a monitor looks like this
@@ -15,8 +12,8 @@ A common example:
 monitor=DP-1,1920x1080@144,0x0,1
 ```
 
-will tell Hyprland to make the monitor on `DP-1` a `1920x1080` display, at 144Hz,
-`0x0` off from the top left corner, with a scale of 1 (unscaled).
+will tell Hyprland to make the monitor on `DP-1` a `1920x1080` display, at
+144Hz, `0x0` off from the top left corner, with a scale of 1 (unscaled).
 
 To list all available monitors (active and inactive):
 
@@ -24,23 +21,28 @@ To list all available monitors (active and inactive):
 hyprctl monitors all
 ```
 
-Monitors are positioned on a virtual "layout". The `position` is the position of 
+Monitors are positioned on a virtual "layout". The `position` is the position of
 said display in the layout. (calculated from the top-left corner)
 
 For example:
+
 ```ini
 monitor=DP-1, 1920x1080, 0x0, 1
 monitor=DP-2, 1920x1080, 1920x0, 1
 ```
+
 will tell hyprland to make DP-1 on the _left_ of DP-2, while
+
 ```ini
 monitor=DP-1, 1920x1080, 1920x0, 1
 monitor=DP-2, 1920x1080, 0x0, 1
 ```
+
 will tell hyprland to make DP-1 on the _right_.
 
 The `position` may contain _negative_ values, so the above example could also be
 written as
+
 ```ini
 monitor=DP-1, 1920x1080, 0x0, 1
 monitor=DP-2, 1920x1080, -1920x0, 1
@@ -48,10 +50,10 @@ monitor=DP-2, 1920x1080, -1920x0, 1
 
 {{< callout type=tip >}}
 
-The position is calculated with the scaled (and transformed) resolution, meaning if
-you want your 4K monitor with scale 2 to the left of your 1080p one, you'd use
-the position `1920x0` for the second screen. (3840 / 2)
-If the monitor is also rotated 90 degrees (vertical), you'd use `1080x0`.
+The position is calculated with the scaled (and transformed) resolution, meaning
+if you want your 4K monitor with scale 2 to the left of your 1080p one, you'd
+use the position `1920x0` for the second screen. (3840 / 2) If the monitor is
+also rotated 90 degrees (vertical), you'd use `1080x0`.
 
 {{</ callout >}}
 
@@ -61,8 +63,8 @@ match.
 You can use `preferred` as a resolution to use the display's preferred size and
 `auto` as a position to let Hyprland decide on a position for you.
 
-You can also use `auto` as a scale to let Hyprland decide on a scale for you. These
-depend on the PPI of the monitor.
+You can also use `auto` as a scale to let Hyprland decide on a scale for you.
+These depend on the PPI of the monitor.
 
 Recommended rule for quickly plugging in random monitors:
 
@@ -88,9 +90,9 @@ for a focus on resolution this:
 monitor=,highres,auto,1
 ```
 
-For more specific rules, you can also use the output's description
-(see `hyprctl monitors` for more details).
-If the output of `hyprctl monitors` looks like the following:
+For more specific rules, you can also use the output's description (see
+`hyprctl monitors` for more details). If the output of `hyprctl monitors` looks
+like the following:
 
 ```
 Monitor eDP-1 (ID 0):
@@ -101,8 +103,8 @@ Monitor eDP-1 (ID 0):
         [...]
 ```
 
-then the `description` value up to the portname `(eDP-1)` can be used
-to specify the monitor:
+then the `description` value up to the portname `(eDP-1)` can be used to specify
+the monitor:
 
 ```
 monitor=desc:Chimei Innolux Corporation 0x150C,preferred,auto,1.5
@@ -112,7 +114,8 @@ Remember to remove the `(portname)`!
 
 ## Custom modelines
 
-You can set up a custom modeline by changing the resolution field to a modeline, for example:
+You can set up a custom modeline by changing the resolution field to a modeline,
+for example:
 
 ```
 monitor = DP-1, modeline 1071.101 3840 3848 3880 3920 2160 2263 2271 2277 +hsync -vsync, 0x0, 1
@@ -128,9 +131,10 @@ monitor=name,disable
 
 {{< callout type=tip >}}
 
-Disabling a monitor will literally remove it from the layout, moving all windows and workspaces
-to any remaining ones. If you want to disable your monitor in a screensaver style (just turn
-off the monitor) use the `dpms` [dispatcher](../Dispatchers).
+Disabling a monitor will literally remove it from the layout, moving all windows
+and workspaces to any remaining ones. If you want to disable your monitor in a
+screensaver style (just turn off the monitor) use the `dpms`
+[dispatcher](../Dispatchers).
 
 {{</ callout >}}
 
@@ -149,15 +153,17 @@ only use one of these rules per monitor in the config.
 # Extra args
 
 You can combine extra arguments at the end of the monitor rule, examples:
+
 ```ini
 monitor=eDP-1,2880x1800@90,0x0,1,transform,1,mirror,DP-2,bitdepth,10
 ```
+
 See bellow for more detail about each argument.
 
 ## Mirrored displays
 
-If you want to mirror a display, add a `,mirror,[NAME]` at the end of the monitor
-rule, examples:
+If you want to mirror a display, add a `,mirror,[NAME]` at the end of the
+monitor rule, examples:
 
 ```ini
 monitor=DP-3,1920x1080@60,0x0,1,mirror,DP-2
@@ -171,28 +177,34 @@ will occur on non-matching resolutions.
 
 ## 10 bit support
 
-If you want to enable 10 bit support for your display, add a `,bitdepth,10` at the
-end of the monitor rule, e.g.:
+If you want to enable 10 bit support for your display, add a `,bitdepth,10` at
+the end of the monitor rule, e.g.:
+
 ```ini
 monitor=eDP-1,2880x1800@90,0x0,1,bitdepth,10
 ```
-**NOTE** Colors registered in Hyprland (e.g. the border color) do _not_support 10 bit.
+
+**NOTE** Colors registered in Hyprland (e.g. the border color) do _not_support
+10 bit.
 
 **NOTE** Some applications do _not_support screen capture with 10 bit enabled.
 
 ## VRR
 
-Per-display VRR can be done by adding `,vrr,X` where `X` is the mode from the [variables page](../Variables).
+Per-display VRR can be done by adding `,vrr,X` where `X` is the mode from the
+[variables page](../Variables).
 
 # Rotating
 
-If you want to rotate a monitor, add a `,transform,X` at the end
-of the monitor rule, where `X` corresponds to a transform number, e.g.:
+If you want to rotate a monitor, add a `,transform,X` at the end of the monitor
+rule, where `X` corresponds to a transform number, e.g.:
+
 ```ini
 monitor=eDP-1,2880x1800@90,0x0,1,transform,1
 ```
 
 Transform list:
+
 ```ini
 normal (no transforms) -> 0
 90 degrees -> 1
@@ -204,8 +216,8 @@ flipped + 180 degrees -> 6
 flipped + 270 degrees -> 7
 ```
 
-{{< callout type=note >}}
-If you're using a touchscreen, you'll also have to rotate its digitizer to match: 
+{{< callout type=note >}} If you're using a touchscreen, you'll also have to
+rotate its digitizer to match:
 
 ```ini
 input {
@@ -215,8 +227,8 @@ input {
 }
 ```
 
-This will be done automatically when [#3544](https://github.com/hyprwm/Hyprland/pull/3544) lands.
-{{< /callout >}}
+This will be done automatically when
+[#3544](https://github.com/hyprwm/Hyprland/pull/3544) lands. {{< /callout >}}
 
 # Default workspace
 

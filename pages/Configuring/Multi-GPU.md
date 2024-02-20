@@ -1,15 +1,11 @@
-# Table of contents
-
-
 # General
 
 If your host machine uses multiple GPUs, you may want to primarily use one GPU
 for rendering all the elements for Hyprland including windows, animations, and
 another for hardware acceleration for certain applications, etc.
 
-This setup is very common in the likes of gaming laptops, 
-GPU-passthrough (without VFIO) capable hosts, and if you have multiple GPUs in
-general.
+This setup is very common in the likes of gaming laptops, GPU-passthrough
+(without VFIO) capable hosts, and if you have multiple GPUs in general.
 
 # Detecting GPUs
 
@@ -22,6 +18,7 @@ available.
 01:00.0 VGA compatible controller: NVIDIA Corporation TU117M [GeForce GTX 1650 Mobile / Max-Q] (rev a1)
 06:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Cezanne [Radeon Vega Series / Radeon Vega Mobile Series] (rev c6)
 ```
+
 Here it is clear that 2 GPUs are available, the dedicated NVIDIA GTX 1650 Mobile
 / Max-Q and the integrated AMD Cezanne Radeon Vega Series GPU.
 
@@ -61,7 +58,7 @@ Add the following template to `hyprland.conf`
 env = WLR_DRM_DEVICES,/dev/dri/cardN
 ```
 
-For our case, we want to use `card1` primarily and use it to render stuff. 
+For our case, we want to use `card1` primarily and use it to render stuff.
 
 ```ini
 env = WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0

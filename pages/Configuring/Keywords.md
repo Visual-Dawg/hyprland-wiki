@@ -1,7 +1,8 @@
-Keywords are not variables, but "commands" for more advanced configuring. On this
-page, you will be presented with some that do not deserve their own page.
+Keywords are not variables, but "commands" for more advanced configuring. On
+this page, you will be presented with some that do not deserve their own page.
 
-See the sidebar for more keywords to control binds, animations, monitors, et cetera.
+See the sidebar for more keywords to control binds, animations, monitors, et
+cetera.
 
 {{< callout type=important >}}
 
@@ -20,9 +21,6 @@ three_param_keyword = A, B,  # OK
 ```
 
 {{< /callout >}}
-
-# Table of contents
-
 
 # Executing
 
@@ -110,10 +108,11 @@ touchdevice:transform -> transform
 touchdevice:output -> output
 ```
 
-You can also use the `output` setting for tablets to bind them to outputs. Remember to
-use the name of the `Tablet` and not `Tablet Pad` or `Tablet tool`.
+You can also use the `output` setting for tablets to bind them to outputs.
+Remember to use the name of the `Tablet` and not `Tablet Pad` or `Tablet tool`.
 
 Additional properties only present in per-device configs:
+
 ```plain
 enabled -> (only for mice / touchpads / touchdevices / keyboards) enables / disables the device (connects / disconnects from the on-screen cursor) - default: Enabled
 ```
@@ -131,10 +130,9 @@ device {
 
 _remember about the space after the end of the device's name (before the `{`)!_
 
-{{< callout type=info >}}
-Per-device layouts will not alter the keybind keymap, so for example with a global keymap of `us`
-and a per-device one of `fr`, the keybinds will still act as if you were on `us`.
-{{< /callout >}}
+{{< callout type=info >}} Per-device layouts will not alter the keybind keymap,
+so for example with a global keymap of `us` and a per-device one of `fr`, the
+keybinds will still act as if you were on `us`. {{< /callout >}}
 
 # Wallpapers
 
@@ -142,7 +140,8 @@ The hyprland background you see when you first start Hyprland is **NOT A
 WALLPAPER**, it's the default image rendered at the bottom of the render stack.
 
 To set a wallpaper, use a wallpaper utility like
-[hyprpaper](https://github.com/hyprwm/hyprpaper) or [swaybg](https://github.com/swaywm/swaybg). 
+[hyprpaper](https://github.com/hyprwm/hyprpaper) or
+[swaybg](https://github.com/swaywm/swaybg).
 
 More can be found in [Useful Utilities](../../Useful-Utilities).
 
@@ -175,30 +174,36 @@ layerrule = unset,NAMESPACE
 
 # Setting the environment
 
-{{< callout type=note >}}
-The `env` keyword works just like `exec-once`, meaning it will only fire once on Hyprland's launch.
-{{< /callout >}}
+{{< callout type=note >}} The `env` keyword works just like `exec-once`, meaning
+it will only fire once on Hyprland's launch. {{< /callout >}}
 
-You can use the `env` keyword to set environment variables at Hyprland's start, e.g.:
+You can use the `env` keyword to set environment variables at Hyprland's start,
+e.g.:
+
 ```ini
 env = XCURSOR_SIZE,24
 ```
 
-You can also add a `d` flag if you want the env var to be exported to D-Bus (systemd only)
+You can also add a `d` flag if you want the env var to be exported to D-Bus
+(systemd only)
+
 ```ini
 envd = XCURSOR_SIZE,24
 ```
 
-{{< callout type=important >}}
-Hyprland puts the raw string to the envvar. You should _not_ add quotes around the values.
+{{< callout type=important >}} Hyprland puts the raw string to the envvar. You
+should _not_ add quotes around the values.
 
 e.g.:
+
 ```ini
 env = QT_QPA_PLATFORM,wayland
 ```
 
-and ***NOT***
+and _**NOT**_
+
 ```ini
 env = QT_QPA_PLATFORM,"wayland"
 ```
+
 {{< /callout >}}

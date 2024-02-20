@@ -1,23 +1,23 @@
-# Table of contents
-
-
 # Waybar
 
 Waybar is a GTK status bar made specifically for wlroots compositors and
 supports Hyprland by default. To use it, it's recommended to use your distro's
 package.
 
-If you want to use the workspaces module, first, copy the configuration files from
-`/etc/xdg/waybar/` into `~/.config/waybar/`. Then, in `~/.config/waybar/config` replace
-all the references to `sway/workspaces` with `hyprland/workspaces`.
+If you want to use the workspaces module, first, copy the configuration files
+from `/etc/xdg/waybar/` into `~/.config/waybar/`. Then, in
+`~/.config/waybar/config` replace all the references to `sway/workspaces` with
+`hyprland/workspaces`.
 
 For more info regarding configuration, see
 [The Waybar Wiki](https://github.com/Alexays/Waybar/wiki/Module:-Hyprland).
 
 ## How to launch
 
-After getting everything set up, you might want to check if Waybar is configured to your liking. To launch it, simply type `waybar` into your terminal.
-If you would like waybar to launch alongside hyprland, you can do this by adding a line to your hyprland configuration that reads `exec-once=waybar`
+After getting everything set up, you might want to check if Waybar is configured
+to your liking. To launch it, simply type `waybar` into your terminal. If you
+would like waybar to launch alongside hyprland, you can do this by adding a line
+to your hyprland configuration that reads `exec-once=waybar`
 
 ## Waybar popups render behind the windows
 
@@ -26,12 +26,14 @@ set to `top` and not `bottom`.
 
 ## Active workspace doesn't show up
 
-Replace `#workspaces button.focused` with `#workspaces button.active` in `~/.config/waybar/style.css`.
+Replace `#workspaces button.focused` with `#workspaces button.active` in
+`~/.config/waybar/style.css`.
 
 ## Scrolling through workspaces
 
-Since there a lot of configuration options from `sway/workspaces` are missing, you
-should deduce some of them by yourself. In the case of scrolling, it should look like this:
+Since there a lot of configuration options from `sway/workspaces` are missing,
+you should deduce some of them by yourself. In the case of scrolling, it should
+look like this:
 
 ```json
 "hyprland/workspaces": {
@@ -43,20 +45,24 @@ should deduce some of them by yourself. In the case of scrolling, it should look
 
 ## Clicking on a workspace icon does not work!
 
-On the `hyprland/workspaces` module, add `"on-click": "activate"`. That's the purpose of
-the `sed` command used before building Waybar: the default way to select a workspace by 
-clicking uses the `swaymsg`'s way, and thus it is required to edit
-this function to make it work with `hyprctl`.
+On the `hyprland/workspaces` module, add `"on-click": "activate"`. That's the
+purpose of the `sed` command used before building Waybar: the default way to
+select a workspace by clicking uses the `swaymsg`'s way, and thus it is required
+to edit this function to make it work with `hyprctl`.
 
 ## Window title is missing
 
-Follow the above instructions to make sure everything is working.
-The prefix for the window module that provides the title is `hyprland` not `wlr`.
-In your waybar config, insert this module:
+Follow the above instructions to make sure everything is working. The prefix for
+the window module that provides the title is `hyprland` not `wlr`. In your
+waybar config, insert this module:
+
 ```json
 "modules-center": ["hyprland/window"],
 ```
-If you are using a multiple monitors, you may want to also insert this module configuration:
+
+If you are using a multiple monitors, you may want to also insert this module
+configuration:
+
 ```json
 "hyprland/window": {
     "max-length": 200,
@@ -74,22 +80,29 @@ by manually compiling. In the latter case, you can follow the
 ## Configuration
 
 After you've successfully installed Eww, you can move onto configuring it. There
-are a few examples listed in the [Readme](https://github.com/elkowar/eww). It's also
-highly recommended to read through the
+are a few examples listed in the [Readme](https://github.com/elkowar/eww). It's
+also highly recommended to read through the
 [Configuration options](https://elkowar.github.io/eww/configuration.html).
 
-{{< callout type=important >}}
-Read
+{{< callout type=important >}} Read
 [the Wayland section](https://elkowar.github.io/eww/configuration.html#wayland)
-carefully before asking why your bar doesn't work.
-{{< /callout >}}
+carefully before asking why your bar doesn't work. {{< /callout >}}
 
 Here are some example widgets that might be useful for Hyprland:
 
 <details>
 <summary>Workspaces widget</summary>
 
-This widget displays a list of workspaces 1-10. Each workspace can be clicked on to jump to it, and scrolling over the widget cycles through them. It supports different styles for the current workspace, occupied workspaces, and empty workspaces. It requires [bash](https://linux.die.net/man/1/bash), [awk](https://linux.die.net/man/1/awk), [stdbuf](https://linux.die.net/man/1/stdbuf), [grep](https://linux.die.net/man/1/grep), [seq](https://linux.die.net/man/1/seq), [socat](https://linux.die.net/man/1/socat), [jq](https://stedolan.github.io/jq/), and [Python 3](https://www.python.org/).
+This widget displays a list of workspaces 1-10. Each workspace can be clicked on
+to jump to it, and scrolling over the widget cycles through them. It supports
+different styles for the current workspace, occupied workspaces, and empty
+workspaces. It requires [bash](https://linux.die.net/man/1/bash),
+[awk](https://linux.die.net/man/1/awk),
+[stdbuf](https://linux.die.net/man/1/stdbuf),
+[grep](https://linux.die.net/man/1/grep),
+[seq](https://linux.die.net/man/1/seq),
+[socat](https://linux.die.net/man/1/socat),
+[jq](https://stedolan.github.io/jq/), and [Python 3](https://www.python.org/).
 
 ### `~/.config/eww.yuck`
 
@@ -112,7 +125,6 @@ This widget displays a list of workspaces 1-10. Each workspace can be clicked on
     )
   )
 ...
-
 ```
 
 ### `~/.config/eww/scripts/change-active-workspace`
@@ -173,7 +185,11 @@ done
 <details>
 <summary>Active window title widget</summary>
 
-This widget simply displays the title of the active window. It requires [awk](https://linux.die.net/man/1/awk), [stdbuf](https://linux.die.net/man/1/stdbuf), [socat](https://linux.die.net/man/1/socat), and [jq](https://stedolan.github.io/jq/).
+This widget simply displays the title of the active window. It requires
+[awk](https://linux.die.net/man/1/awk),
+[stdbuf](https://linux.die.net/man/1/stdbuf),
+[socat](https://linux.die.net/man/1/socat), and
+[jq](https://stedolan.github.io/jq/).
 
 ### `~/.config/eww/eww.yuck`
 
@@ -200,22 +216,30 @@ socat -u UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | s
 
 # Hybrid
 
-Like Waybar, [Hybrid](https://github.com/vars1ty/HybridBar) is a GTK status bar mainly focused for wlroots compositors.
+Like Waybar, [Hybrid](https://github.com/vars1ty/HybridBar) is a GTK status bar
+mainly focused for wlroots compositors.
 
 You can install it from the AUR by the name `hybrid-bar`.
 
 ## Configuration
 
-The configuration is done through JSON, more information is available [here](https://github.com/vars1ty/HybridBar).
+The configuration is done through JSON, more information is available
+[here](https://github.com/vars1ty/HybridBar).
 
 ## How to launch
 
-After configuring HybridBar, you can launch it by typing `hybrid-bar` into your terminal to try it out.
-It is also possible to set it to launch at start, to do this you can add a line to your hyprland configuration that reads `exec-once=hybrid-bar`
+After configuring HybridBar, you can launch it by typing `hybrid-bar` into your
+terminal to try it out. It is also possible to set it to launch at start, to do
+this you can add a line to your hyprland configuration that reads
+`exec-once=hybrid-bar`
 
 ### Blur
 
-To activate blur, set `blurls=NAMESPACE` in your hyprland configuration, where `NAMESPACE` is the gtk-layer-shell namespace of your HybridBar. The default namespace is `gtk-layer-shell` and can be changed in the HybridBar configuration at 
+To activate blur, set `blurls=NAMESPACE` in your hyprland configuration, where
+`NAMESPACE` is the gtk-layer-shell namespace of your HybridBar. The default
+namespace is `gtk-layer-shell` and can be changed in the HybridBar configuration
+at
+
 ```json
 {
      "hybrid" {

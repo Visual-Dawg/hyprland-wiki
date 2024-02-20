@@ -1,6 +1,3 @@
-# Table of Contents
-
-
 # Basic
 
 ```ini
@@ -15,8 +12,7 @@ bind=SUPER_SHIFT,Q,exec,firefox
 
 will bind opening firefox to <key>SUPER</key> + <key>SHIFT</key> + <key>Q</key>
 
-{{< callout type=tip >}}
-For binding keys without a modkey, leave it empty:
+{{< callout type=tip >}} For binding keys without a modkey, leave it empty:
 
 ```ini
 bind=,Print,exec,grim
@@ -26,7 +22,8 @@ bind=,Print,exec,grim
 
 _For a complete mod list, see [Variables](../Variables/#variable-types)._
 
-_The dispatcher list can be found in [Dispatchers](../Dispatchers/#list-of-dispatchers)._
+_The dispatcher list can be found in
+[Dispatchers](../Dispatchers/#list-of-dispatchers)._
 
 ## Uncommon syms / binding with a keycode
 
@@ -34,11 +31,11 @@ See the
 [xkbcommon-keysyms.h header](https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h)
 for all the keysyms. The name you should use is the segment after `XKB_KEY_`.
 
-If you are unsure of what your key's name is, you can
-use `xev` or `wev` to find that information.
+If you are unsure of what your key's name is, you can use `xev` or `wev` to find
+that information.
 
-If you want to bind by a keycode, you can just input it in the KEY position with a `code:` prefix,
-e.g.:
+If you want to bind by a keycode, you can just input it in the KEY position with
+a `code:` prefix, e.g.:
 
 ```ini
 bind=SUPER,code:28,exec,amongus
@@ -85,7 +82,8 @@ bindr=SUPERALT,Alt_L,exec,amongus
 
 ## Mouse wheel
 
-You can also bind the mouse wheel with `mouse_up` and `mouse_down` (or `mouse_left` and `mouse_right` if your wheel supports horizontal scrolling):
+You can also bind the mouse wheel with `mouse_up` and `mouse_down` (or
+`mouse_left` and `mouse_right` if your wheel supports horizontal scrolling):
 
 ```ini
 bind=SUPER,mouse_down,workspace,e-1
@@ -110,7 +108,8 @@ check out your switches in `hyprctl devices`.
 
 ## Multiple binds to one key
 
-You can trigger multiple actions with one keybind by assigning multiple binds to one combination, e.g.:
+You can trigger multiple actions with one keybind by assigning multiple binds to
+one combination, e.g.:
 
 ```
 # to switch between windows in a floating workspace
@@ -163,8 +162,8 @@ bindr=SUPER, SUPER_L, exec, pkill wofi || wofi
 
 # Mouse Binds
 
-Mouse binds are binds that heavily rely on a mouse, usually its movement.
-They will have one less arg, and look for example like this:
+Mouse binds are binds that heavily rely on a mouse, usually its movement. They
+will have one less arg, and look for example like this:
 
 ```ini
 bindm=ALT,mouse:272,movewindow
@@ -175,9 +174,9 @@ with your mouse.
 
 _Available mouse binds_:
 
-| Name | Description | Params |
-| -----|------------ |--------|
-| movewindow   | moves the active window   | none |
+| Name         | Description               | Params                                                                                                                                     |
+| ------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| movewindow   | moves the active window   | none                                                                                                                                       |
 | resizewindow | resizes the active window | 1 - resize and keep window aspect ratio, 2 - resize and ignore `keepaspectratio` window rule/prop, none or anything else for normal resize |
 
 _Common mouse buttons' codes:_
@@ -189,10 +188,9 @@ RMB -> 273
 
 _for more, you can of course use `wev` to check._
 
-{{< callout type=tip >}}
-Mouse binds, despite their name, behave like normal binds. You are free to use
-whatever keys / mods you please. When held, the mouse function will be activated.
-{{< /callout >}}
+{{< callout type=tip >}} Mouse binds, despite their name, behave like normal
+binds. You are free to use whatever keys / mods you please. When held, the mouse
+function will be activated. {{< /callout >}}
 
 # Binding mods
 
@@ -205,12 +203,13 @@ bindr=ALT,Alt_L,exec,amongus
 # Global Keybinds
 
 ## Classic
+
 Yes, you heard this right, Hyprland does support global keybinds for ALL apps,
 including OBS, Discord, Firefox, etc.
 
 See the [`pass` dispatcher](../Dispatchers/#list-of-dispatchers) for keybinds.
 
-Let's take OBS as an example: the "Start/Stop Recording" keybind is set to 
+Let's take OBS as an example: the "Start/Stop Recording" keybind is set to
 <key>SUPER</key> + <key>F10</key>, and you want to make it work globally.
 
 Simply add
@@ -231,20 +230,23 @@ bind=,mouse:276,pass,^(TeamSpeak 3)$
 Will pass MOUSE5 to TeamSpeak3.
 
 {{< callout type=important >}}
+
 XWayland is a bit wonky. Make sure that what you're passing is a "global Xorg
 keybind", otherwise passing from a different XWayland app may not work.
 
 It works flawlessly with all native Wayland applications though.
+
 {{< /callout >}}
 
 ## DBus Global Shortcuts
 
-Some applications may already support the GlobalShortcuts portal in xdg-desktop-portal.
+Some applications may already support the GlobalShortcuts portal in
+xdg-desktop-portal.
 
 If that's the case, then it's recommended to use this method instead of `pass`.
 
-Open your desired app and issue `hyprctl globalshortcuts`. This will give you a list
-of currently registered shortcuts with their description(s).
+Open your desired app and issue `hyprctl globalshortcuts`. This will give you a
+list of currently registered shortcuts with their description(s).
 
 Choose whichever you like, for example `coolApp:myToggle`
 
@@ -254,16 +256,14 @@ Bind it to whatever you want with the `global` dispatcher:
 bind = SUPERSHIFT, A, global, coolApp:myToggle
 ```
 
-{{< callout type=tip >}}
-Please note that this function will _only_ work with [XDPH](../../Useful-Utilities/Hyprland-desktop-portal).
-{{</ callout >}}
+{{< callout type=tip >}} Please note that this function will _only_ work with
+[XDPH](../../Useful-Utilities/Hyprland-desktop-portal). {{</ callout >}}
 
 # Submaps
 
 If you want keybind submaps, also known as _modes_ or _groups_, for example if
-you press <key>ALT</key> + <key>R</key>, you can enter a "resize" mode,
-resize with arrow keys, and leave
-with escape, do it like this:
+you press <key>ALT</key> + <key>R</key>, you can enter a "resize" mode, resize
+with arrow keys, and leave with escape, do it like this:
 
 ```ini
 # will switch to a submap called resize
@@ -291,7 +291,8 @@ submap=reset
 this case, `escape`)
 
 If you get stuck inside a keymap, you can use `hyprctl dispatch submap reset` to
-go back. If you do not have a terminal open, tough luck buddy. You have been warned.
+go back. If you do not have a terminal open, tough luck buddy. You have been
+warned.
 
 You can also set the same keybind to perform multiple actions, such as resize
 and close the submap, like so:
