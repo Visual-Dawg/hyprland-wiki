@@ -1,11 +1,15 @@
-You can override the package through `.override` or `.overrideAttrs`. This
-is easily achievable on [NixOS](../Hyprland-on-NixOS) or
+---
+title: Options & Overrides
+---
+
+You can override the package through `.override` or `.overrideAttrs`. This is
+easily achievable on [NixOS](../Hyprland-on-NixOS) or
 [Home Manager](../Hyprland-on-Home-Manager).
 
 ## Package options
 
-These are the default options that the Hyprland package is built with. These
-can be changed by setting the appropriate option to `true`/`false`.
+These are the default options that the Hyprland package is built with. These can
+be changed by setting the appropriate option to `true`/`false`.
 
 ### Package
 
@@ -30,8 +34,8 @@ programs.hyprland = { # or wayland.windowManager.hyprland
 
 ### XWayland
 
-XWayland is enabled by default in the Nix package. You can disable it either
-in the package itself, or through the module options.
+XWayland is enabled by default in the Nix package. You can disable it either in
+the package itself, or through the module options.
 
 ### XWayland HiDPI
 

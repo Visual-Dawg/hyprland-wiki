@@ -1,31 +1,50 @@
-Here you will find links to some other projects that may not fit into any of the above categories.
+---
+title: Other
+---
+
+Here you will find links to some other projects that may not fit into any of the
+above categories.
 
 ### Workspace management
-[hyprsome](https://github.com/sopa0/hyprsome) by _sopa0_: Awesome-like workspaces for Hyprland.
+
+[hyprsome](https://github.com/sopa0/hyprsome) by _sopa0_: Awesome-like
+workspaces for Hyprland.
 
 ### Keyboard layout management
-[hyprland-per-window-layout](https://github.com/coffebar/hyprland-per-window-layout/) by _MahouShoujoMivutilde and coffebar_: Per window keyboard layouts for Hyprland.
+
+[hyprland-per-window-layout](https://github.com/coffebar/hyprland-per-window-layout/)
+by _MahouShoujoMivutilde and coffebar_: Per window keyboard layouts for
+Hyprland.
 
 ### IPC wrappers
-[hyprland-rs](https://github.com/yavko/hyprland-rs) by _yavko_: A neat wrapper for Hyprland's IPC written in Rust
+
+[hyprland-rs](https://github.com/yavko/hyprland-rs) by _yavko_: A neat wrapper
+for Hyprland's IPC written in Rust
 
 ### Screen shaders/color temperature
-[hyprshade](https://github.com/loqusion/hyprshade) by _loqusion_: Utility for swapping and scheduling screen shaders; also functions as an [automatic color temperature shifter](https://en.wikipedia.org/wiki/F.lux). (Useful for Nvidia users for whom other color temperature shifting apps do not work.)
+
+[hyprshade](https://github.com/loqusion/hyprshade) by _loqusion_: Utility for
+swapping and scheduling screen shaders; also functions as an
+[automatic color temperature shifter](https://en.wikipedia.org/wiki/F.lux).
+(Useful for Nvidia users for whom other color temperature shifting apps do not
+work.)
 
 ### Automatically Mounting Using `udiskie`
 
 _Starting method:_ manual ('exec-once')
 
-USB Mass storage devices, like thumb drives, mobile phones, digital cameras, etc. do not mount automatically to the file system.
+USB Mass storage devices, like thumb drives, mobile phones, digital cameras,
+etc. do not mount automatically to the file system.
 
 We generally have to manually mount it, often using root and `umount` to do so.
 
 Many popular DEs automatically handle this by using `udisks2` wrappers.
 
+`udiskie` is a udisks2 front-end that allows to manage removable media such as
+CDs or flash drives from userspace.
 
-`udiskie` is a udisks2 front-end that allows to manage removable media such as CDs or flash drives from userspace.
-
-Install `udiskie` via your repositories, or [build manually](https://github.com/coldfix/udiskie/wiki/installation)
+Install `udiskie` via your repositories, or
+[build manually](https://github.com/coldfix/udiskie/wiki/installation)
 
 Head over to your `~/.config/hypr/hyprland.conf` and add the following lines:
 
@@ -33,7 +52,7 @@ Head over to your `~/.config/hypr/hyprland.conf` and add the following lines:
 exec-once = udiskie &
 ```
 
-What this does is launches `udiskie` and `&` argument launches it in the background. 
+What this does is launches `udiskie` and `&` argument launches it in the
+background.
 
 [See more uses here](https://github.com/coldfix/udiskie/wiki/Usage) .
-

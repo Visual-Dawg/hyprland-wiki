@@ -1,18 +1,19 @@
-hyprlock is a simple, yet fast, multi-threaded and GPU-accelerated screen
-lock for hyprland.
+---
+title: hyprlock
+---
 
-{{< toc >}}
+hyprlock is a simple, yet fast, multi-threaded and GPU-accelerated screen lock
+for hyprland.
 
 ## Configuration
 
 Configuration is done via the config file at `~/.config/hypr/hyprlock.conf`. It is not required, but recommended. Without it, locking shows the current screen.
 ### General
 
-Variables in the `general` category:
-| variable | description | type | default |
-| -- | -- | -- | -- |
-| disable_loading_bar | disables the loading bar on the bottom of the screen while hyprlock is booting up. | bool | false |
-| hide_cursor | hides the cursor instead of making it visible | bool | true |
+Variables in the `general` category: | variable | description | type | default |
+| -- | -- | -- | -- | | disable_loading_bar | disables the loading bar on the
+bottom of the screen while hyprlock is booting up. | bool | false | |
+hide_cursor | hides the cursor instead of making it visible | bool | true |
 
 ## Widgets
 
@@ -30,16 +31,23 @@ widget_name {
 ## Widget List
 
 ### General remarks
-- All rendered text supports [pango markup](https://docs.gtk.org/Pango/pango_markup.html).
-   - Additionally hyprlock will parse `<br/>` for your convenience. (That's a linebreak) Remember to enable linebreaks in your spans with `allow_breaks="true"`.
-- Positioning is done via halign, valign and position. Position is an added offset to the result of alignment.
-   - halign: `left`, `center`, `right`, `none`. valign: `top`, `center`, `bottom`, `none`
+
+- All rendered text supports
+  [pango markup](https://docs.gtk.org/Pango/pango_markup.html).
+  - Additionally hyprlock will parse `<br/>` for your convenience. (That's a
+    linebreak) Remember to enable linebreaks in your spans with
+    `allow_breaks="true"`.
+- Positioning is done via halign, valign and position. Position is an added
+  offset to the result of alignment.
+  - halign: `left`, `center`, `right`, `none`. valign: `top`, `center`,
+    `bottom`, `none`
 
 ### Background
 
 Draws a background image or fills with color.
 
-If `path` is empty or missing, will use `color`. Otherwise, the image will be used.
+If `path` is empty or missing, will use `color`. Otherwise, the image will be
+used.
 
 ```ini
 background {
@@ -92,5 +100,6 @@ label {
 ```
 
 Available variables for `text`:
- - `$USER` - username
- - `$TIME` - current time (e.g. `13:37`)
+
+- `$USER` - username
+- `$TIME` - current time (e.g. `13:37`)

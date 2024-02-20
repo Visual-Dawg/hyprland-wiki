@@ -1,9 +1,13 @@
+---
+title: Installation
+---
+
 # Foreword
 
 Due to their proprietary nature, Nvidia GPUs have limited compatibility with
-Hyprland. If you want to try Hyprland on Nvidia regardless
-(many people have reported successes), follow the [Nvidia page](../../Nvidia)
-after installing Hyprland.
+Hyprland. If you want to try Hyprland on Nvidia regardless (many people have
+reported successes), follow the [Nvidia page](../../Nvidia) after installing
+Hyprland.
 
 ## Distros
 
@@ -17,11 +21,12 @@ might have **major** issues running Hyprland.
 Installing Hyprland is very easy. Either you install it from your local package
 provider (if they provide pkgs for Hyprland) or you install/build it yourself.
 
-{{< callout title=note >}}
-This project is under development and is constantly
-changing. If you want to keep up to date with the latest commits, please
-consider updating your packages with `yay -Syu --devel`, or your other preferred
-package manager.
+{{< callout >}}
+
+This project is under development and is constantly changing. If you want to
+keep up to date with the latest commits, please consider updating your packages
+with `yay -Syu --devel`, or your other preferred package manager.
+
 {{< /callout >}}
 
 ### Packages
@@ -29,16 +34,16 @@ package manager.
 **WARNING:** I do not maintain any packages. If they are broken, try building
 from source first.
 
-{{< tabs "uniqueid" >}}
+{{% details title="Arch" closed="true" %}}
 
-{{< tab "Arch Linux" >}}
 ```plain
 hyprland-git (AUR) - compiles from latest source
 hyprland - binary x86 tagged release
 ```
 
-{{< /tab >}}
-{{< tab "Nix" >}}
+{{% /details %}}
+
+{{% details title="Nix" closed="true" %}}
 
 Enable Hyprland in your NixOS configuration:
 
@@ -48,9 +53,12 @@ programs.hyprland.enable = true;
 
 For more details, read the [Nix page](../../Nix).
 
-{{< /tab >}}
-{{< tab "openSUSE*" >}}
-Hyprland is part of factory, starting with snapshot 20230411. To install it simply use zypper
+{{% /details %}}
+
+{{% details title="openSUSE*" closed="true" %}}
+
+Hyprland is part of factory, starting with snapshot 20230411. To install it
+simply use zypper
 
 ```sh
 sudo zypper in hyprland
@@ -58,12 +66,16 @@ sudo zypper in hyprland
 
 or install the "hyprland" package via YaST2 Software.
 
-Alternatively, you can also follow the instructions under ["Manual (Manual Build)"](#manual-manual-build)
-to build Hyprland yourself.
+Alternatively, you can also follow the instructions under
+["Manual (Manual Build)"](#manual-manual-build) to build Hyprland yourself.
 
-Note: _Hyprland is not available for Leap, as most libraries (and compiler) that Hyprland needs are too old._
-{{< /tab >}}
-{{< tab "Fedora*" >}}
+Note: _Hyprland is not available for Leap, as most libraries (and compiler) that
+Hyprland needs are too old._
+
+{{% /details %}}
+
+{{% details title="Fedora*" closed="true" %}}
+
 On Fedora 39 and Rawhide, run:
 
 ```sh
@@ -71,18 +83,28 @@ sudo dnf install hyprland
 sudo dnf install hyprland-devel # If you want to build plugins
 ```
 
-Builds for Fedora 38 and additional packages are available in the [solopasha/hyprland](https://copr.fedorainfracloud.org/coprs/solopasha/hyprland) Copr repository.
+Builds for Fedora 38 and additional packages are available in the
+[solopasha/hyprland](https://copr.fedorainfracloud.org/coprs/solopasha/hyprland)
+Copr repository.
 
-If you are on an older version of Fedora, you can also compile it yourself by following the instructions [here](https://github.com/hyprwm/Hyprland/discussions/284)
-{{< /tab >}}
-{{< tab "Gentoo*" >}}
+If you are on an older version of Fedora, you can also compile it yourself by
+following the instructions
+[here](https://github.com/hyprwm/Hyprland/discussions/284)
+
+{{% /details %}}
+
+{{% details title="Gentoo*" closed="true" %}}
+
 The hyprland package is available in the main tree:
 
 ```sh
 emerge --ask gui-wm/hyprland
 ```
 
-Additional packages like xdg-desktop-portal-hyprland, hyprland-plugins, hyprpaper and hyprpicker are available in the [GURU](https://wiki.gentoo.org/wiki/Project:GURU) overlay. Community-contributed scripts are also available in GURU as part of the hyprland-contrib package.
+Additional packages like xdg-desktop-portal-hyprland, hyprland-plugins,
+hyprpaper and hyprpicker are available in the
+[GURU](https://wiki.gentoo.org/wiki/Project:GURU) overlay. Community-contributed
+scripts are also available in GURU as part of the hyprland-contrib package.
 
 ```sh
 eselect repository enable guru
@@ -95,50 +117,84 @@ emerge --ask gui-apps/hyprpicker
 emerge --ask gui-wm/hyprland-contrib
 ```
 
-For USE flags and more details, read the [Gentoo wiki page](https://wiki.gentoo.org/wiki/Hyprland) about Hyprland.
+For USE flags and more details, read the
+[Gentoo wiki page](https://wiki.gentoo.org/wiki/Hyprland) about Hyprland.
 
-{{</ tab >}}
-{{< tab "FreeBSD*" >}}
+{{% /details %}}
+
+{{% details title="FreeBSD*" closed="true" %}}
+
 Hyprland and related are in the default repository:
+
 - [hyprland](https://www.freshports.org/x11-wm/hyprland)
 - [hyprpaper](https://www.freshports.org/x11/hyprpaper)
 - [hyprpicker](https://www.freshports.org/x11/hyprpicker)
 - [xdg-desktop-portal-hyprland](https://www.freshports.org/x11/xdg-desktop-portal-hyprland)
 - [Other Wayland stuff](https://www.freshports.org/wayland/)
-{{</ tab >}}
-{{< tab "Ubuntu 23.04*" >}}
+
+{{% /details %}}
+
+{{% details title="Ubuntu 23.04*" closed="true" %}}
+
 Build Dependencies:
+
 ```bash
 sudo apt-get install -y meson wget build-essential ninja-build cmake-extras cmake gettext gettext-base fontconfig libfontconfig-dev libffi-dev libxml2-dev libdrm-dev libxkbcommon-x11-dev libxkbregistry-dev libxkbcommon-dev libpixman-1-dev libudev-dev libseat-dev seatd libxcb-dri3-dev libegl-dev libgles2 libegl1-mesa-dev glslang-tools libinput-bin libinput-dev libxcb-composite0-dev libavutil-dev libavcodec-dev libavformat-dev libxcb-ewmh2 libxcb-ewmh-dev libxcb-present-dev libxcb-icccm4-dev libxcb-render-util0-dev libxcb-res0-dev libxcb-xinput-dev xdg-desktop-portal-wlr libtomlplusplus3
 ```
-you will also need to build the latest wayland, wayland-protocols, and libdisplay-info tagged releases from source
 
-for more info refer to the [Ubuntu Guide For Installing And Building Hyprland Gist](https://gist.github.com/Vertecedoc4545/3b077301299c20c5b9b4db00f4ca6000)
+you will also need to build the latest wayland, wayland-protocols, and
+libdisplay-info tagged releases from source
+
+for more info refer to the
+[Ubuntu Guide For Installing And Building Hyprland Gist](https://gist.github.com/Vertecedoc4545/3b077301299c20c5b9b4db00f4ca6000)
 
 {{< callout type=warning >}}
 
-Please note that since Ubuntu is generally behind with dependencies, it's not guaranteed
-that the build process will work at all. Even if it is, it's likely that it will break at some point in the future.
+Please note that since Ubuntu is generally behind with dependencies, it's not
+guaranteed that the build process will work at all. Even if it is, it's likely
+that it will break at some point in the future.
 
 Refer to the gist if anything fails.
 
 {{< /callout >}}
 
-{{</ tab >}}
-{{< tab "Void Linux*" >}}
-Hyprland is not available for Void Linux from the official repositories [as Hyprland doesn't build against tagged wlroots](https://github.com/void-linux/void-packages/issues/37544),
-however template files are available [from a third party](https://github.com/Makrennel/hyprland-void) which can build Hyprland [using xbps-src](https://github.com/void-linux/void-packages).
+{{% /details %}}
 
-For further instructions on building with the third party resource, refer to the [README](https://github.com/Makrennel/hyprland-void/blob/master/README.md).
+{{% details title="Void Linux*" closed="true" %}}
+
+Hyprland is not available for Void Linux from the official repositories
+[as Hyprland doesn't build against tagged wlroots](https://github.com/void-linux/void-packages/issues/37544),
+however template files are available
+[from a third party](https://github.com/Makrennel/hyprland-void) which can build
+Hyprland [using xbps-src](https://github.com/void-linux/void-packages).
+
+For further instructions on building with the third party resource, refer to the
+[README](https://github.com/Makrennel/hyprland-void/blob/master/README.md).
 
 {{< callout type=warning >}}
-As always, when using third party scripts exercise caution and understand what the script does.
-{{< /callout>}}
-{{< /tab >}}
 
-{{< /tabs >}}
+As always, when using third party scripts exercise caution and understand what
+the script does.
 
-***\* Unofficial, no official support is provided. These instructions are community-driven, and no guarantee is provided for their validity.***
+{{< /callout >}}
+
+{{% /details %}}
+
+{{% details title="Slackware*" closed="true" %}}
+
+```plain
+hyprland-bin (SlackBuilds) - Prebuilt release for Slackware ready for install
+```
+
+Hyprland is not installed by default on the current release of Slackware.
+
+For detailed instructions on installing this build see
+[here](https://slackbuilds.org/repository/15.0/desktop/hyprland-bin/)
+
+{{% /details %}}
+
+_**\* Unofficial, no official support is provided. These instructions are
+community-driven, and no guarantee is provided for their validity.**_
 
 ### Manual (Releases, Linux-only)
 
@@ -168,15 +224,17 @@ _Arch dependencies_:
 yay -S gdb ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite xorg-xinput libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus
 ```
 
-_(Please make a pull request or open an issue if any packages are missing from the list)_
+_(Please make a pull request or open an issue if any packages are missing from
+the list)_
 
 _openSUSE dependencies_:
 
 ```sh
-zypper in gcc-c++ git meson cmake "pkgconfig(cairo)" "pkgconfig(egl)" "pkgconfig(gbm)" "pkgconfig(gl)" "pkgconfig(glesv2)" "pkgconfig(libdrm)" "pkgconfig(libinput)" "pkgconfig(libseat)" "pkgconfig(libudev)" "pkgconfig(pango)" "pkgconfig(pangocairo)" "pkgconfig(pixman-1)" "pkgconfig(vulkan)" "pkgconfig(wayland-client)" "pkgconfig(wayland-protocols)" "pkgconfig(wayland-scanner)" "pkgconfig(wayland-server)" "pkgconfig(xcb)" "pkgconfig(xcb-icccm)" "pkgconfig(xcb-renderutil)" "pkgconfig(xkbcommon)" "pkgconfig(xwayland)" "pkgconfig(xcb-errors)" glslang-devel Mesa-libGLESv3-devel tomlplusplus-devel 
+zypper in gcc-c++ git meson cmake "pkgconfig(cairo)" "pkgconfig(egl)" "pkgconfig(gbm)" "pkgconfig(gl)" "pkgconfig(glesv2)" "pkgconfig(libdrm)" "pkgconfig(libinput)" "pkgconfig(libseat)" "pkgconfig(libudev)" "pkgconfig(pango)" "pkgconfig(pangocairo)" "pkgconfig(pixman-1)" "pkgconfig(vulkan)" "pkgconfig(wayland-client)" "pkgconfig(wayland-protocols)" "pkgconfig(wayland-scanner)" "pkgconfig(wayland-server)" "pkgconfig(xcb)" "pkgconfig(xcb-icccm)" "pkgconfig(xcb-renderutil)" "pkgconfig(xkbcommon)" "pkgconfig(xwayland)" "pkgconfig(xcb-errors)" glslang-devel Mesa-libGLESv3-devel tomlplusplus-devel
 ```
 
-(this should also work on RHEL/Fedora if you remove `Mesa-libGLESv3-devel` and `pkgconfig(xcb-errors)`)
+(this should also work on RHEL/Fedora if you remove `Mesa-libGLESv3-devel` and
+`pkgconfig(xcb-errors)`)
 
 _FreeBSD dependencies_:
 
@@ -186,17 +244,16 @@ pkg install meson jq `pkg rquery %dn wlroots` hwdata libdisplay-info libliftoff
 export CC=gcc CXX=g++ LDFLAGS="-static-libstdc++ -static-libgcc"
 ```
 
-_Ubuntu 23.04 dependencies_:
-refer to the Ubuntu tab above
+_Ubuntu 23.04 dependencies_: refer to the Ubuntu tab above
 
 Please note Hyprland builds `wlroots`. Make sure you have the dependencies of
 wlroots installed, you can make sure you have them by installing wlroots
 separately (Hyprland doesn't mind)
 
-Also note that Hyprland uses the C++23 standard, so both your compiler
-and your C++ library has to support that (`gcc>=13.0.0` or `clang>=15`).
-On Clang-based systems libc++ may be used by default, so until libc++
-supports C++23 you have to pass `-stdlib=libstdc++` or switch to GCC.
+Also note that Hyprland uses the C++23 standard, so both your compiler and your
+C++ library has to support that (`gcc>=13.0.0` or `clang>=15`). On Clang-based
+systems libc++ may be used by default, so until libc++ supports C++23 you have
+to pass `-stdlib=libstdc++` or switch to GCC.
 
 ### CMake (recommended)
 
@@ -206,7 +263,8 @@ cd Hyprland
 make all && sudo make install
 ```
 
-_CMake is always recommended as it's the intended way Hyprland should be installed._
+_CMake is always recommended as it's the intended way Hyprland should be
+installed._
 
 ### Meson
 
@@ -282,4 +340,5 @@ Now, of course, install manually.
 sudo cp ./build/Hyprland /usr/bin && sudo cp ./example/hyprland.desktop /usr/share/wayland-sessions
 ```
 
-Lastly, copy hyprctl, hyprpm, and wlroots as mentioned [here](#manual-releases-linux-only)
+Lastly, copy hyprctl, hyprpm, and wlroots as mentioned
+[here](#manual-releases-linux-only)

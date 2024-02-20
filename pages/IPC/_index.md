@@ -60,9 +60,13 @@ e.g.: `workspace>>2`
 | lockgroups         | emitted when `lockgroups` is toggled.                                                                                                                                  | `0/1`                                                       |
 | configreloaded     | emitted when the config is done reloading                                                                                                                              | empty                                                       |
 
-{{< callout type=warning >}} A fullscreen event is not guaranteed to fire on/off
-once in succession. A window might do for example 3 requests to be fullscreen'd,
-which would result in 3 fullscreen events. {{< /callout >}}
+{{< callout type=warning >}}
+
+A fullscreen event is not guaranteed to fire on/off once in succession. A window
+might do for example 3 requests to be fullscreen'd, which would result in 3
+fullscreen events.
+
+{{< /callout >}}
 
 # How to use socket2 with bash
 

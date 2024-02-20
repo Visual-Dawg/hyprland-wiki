@@ -1,7 +1,11 @@
+---
+title: Hyprland on Home Manager
+---
+
 For a list of available options, check the
 [Home Manager options](https://nix-community.github.io/home-manager/options.xhtml#opt-wayland.windowManager.hyprland.enable).
 
-{{< callout title=Note >}}
+{{< callout >}}
 
 - _(Required) NixOS Module_: enables critical components needed to run Hyprland
   properly
@@ -10,7 +14,7 @@ For a list of available options, check the
 
 ## Installation
 
-{{< tabs "uniqueid" >}}
+{{< tabs items="Home Manager,Flakes,No Flakes (with flake-compat)" >}}
 
 {{< tab "Home Manager" >}}
 
@@ -105,8 +109,6 @@ in {
 {{< /tab >}}
 
 {{< /tabs >}}
-
-};
 
 ## Usage
 

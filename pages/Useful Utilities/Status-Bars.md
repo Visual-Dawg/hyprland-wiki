@@ -1,3 +1,7 @@
+---
+title: Status bars
+---
+
 # Waybar
 
 Waybar is a GTK status bar made specifically for wlroots compositors and
@@ -84,9 +88,13 @@ are a few examples listed in the [Readme](https://github.com/elkowar/eww). It's
 also highly recommended to read through the
 [Configuration options](https://elkowar.github.io/eww/configuration.html).
 
-{{< callout type=important >}} Read
+{{< callout >}}
+
+Read
 [the Wayland section](https://elkowar.github.io/eww/configuration.html#wayland)
-carefully before asking why your bar doesn't work. {{< /callout >}}
+carefully before asking why your bar doesn't work.
+
+{{< /callout >}}
 
 Here are some example widgets that might be useful for Hyprland:
 

@@ -1,3 +1,7 @@
+---
+title: Monitors
+---
+
 # General
 
 The general config of a monitor looks like this
@@ -48,7 +52,7 @@ monitor=DP-1, 1920x1080, 0x0, 1
 monitor=DP-2, 1920x1080, -1920x0, 1
 ```
 
-{{< callout type=tip >}}
+{{< callout type=info >}}
 
 The position is calculated with the scaled (and transformed) resolution, meaning
 if you want your 4K monitor with scale 2 to the left of your 1080p one, you'd
@@ -129,7 +133,7 @@ To disable a monitor, use
 monitor=name,disable
 ```
 
-{{< callout type=tip >}}
+{{< callout >}}
 
 Disabling a monitor will literally remove it from the layout, moving all windows
 and workspaces to any remaining ones. If you want to disable your monitor in a
@@ -216,8 +220,10 @@ flipped + 180 degrees -> 6
 flipped + 270 degrees -> 7
 ```
 
-{{< callout type=note >}} If you're using a touchscreen, you'll also have to
-rotate its digitizer to match:
+{{< callout type=info >}}
+
+If you're using a touchscreen, you'll also have to rotate its digitizer to
+match:
 
 ```ini
 input {
@@ -228,7 +234,9 @@ input {
 ```
 
 This will be done automatically when
-[#3544](https://github.com/hyprwm/Hyprland/pull/3544) lands. {{< /callout >}}
+[#3544](https://github.com/hyprwm/Hyprland/pull/3544) lands.
+
+{{< /callout >}}
 
 # Default workspace
 

@@ -1,3 +1,7 @@
+---
+title: Binds
+---
+
 # Basic
 
 ```ini
@@ -12,7 +16,9 @@ bind=SUPER_SHIFT,Q,exec,firefox
 
 will bind opening firefox to <key>SUPER</key> + <key>SHIFT</key> + <key>Q</key>
 
-{{< callout type=tip >}} For binding keys without a modkey, leave it empty:
+{{< callout type=info >}}
+
+For binding keys without a modkey, leave it empty:
 
 ```ini
 bind=,Print,exec,grim
@@ -188,9 +194,13 @@ RMB -> 273
 
 _for more, you can of course use `wev` to check._
 
-{{< callout type=tip >}} Mouse binds, despite their name, behave like normal
-binds. You are free to use whatever keys / mods you please. When held, the mouse
-function will be activated. {{< /callout >}}
+{{< callout type=info >}}
+
+Mouse binds, despite their name, behave like normal binds. You are free to use
+whatever keys / mods you please. When held, the mouse function will be
+activated.
+
+{{< /callout >}}
 
 # Binding mods
 
@@ -229,7 +239,7 @@ bind=,mouse:276,pass,^(TeamSpeak 3)$
 
 Will pass MOUSE5 to TeamSpeak3.
 
-{{< callout type=important >}}
+{{< callout >}}
 
 XWayland is a bit wonky. Make sure that what you're passing is a "global Xorg
 keybind", otherwise passing from a different XWayland app may not work.
@@ -256,8 +266,12 @@ Bind it to whatever you want with the `global` dispatcher:
 bind = SUPERSHIFT, A, global, coolApp:myToggle
 ```
 
-{{< callout type=tip >}} Please note that this function will _only_ work with
-[XDPH](../../Useful-Utilities/Hyprland-desktop-portal). {{</ callout >}}
+{{< callout type=info >}}
+
+Please note that this function will _only_ work with
+[XDPH](../../Useful-Utilities/Hyprland-desktop-portal).
+
+{{</ callout >}}
 
 # Submaps
 
@@ -287,8 +301,12 @@ submap=reset
 # keybinds further down will be global again...
 ```
 
-**IMPORTANT:** do not forget a keybind to reset the keymap while inside it! (In
-this case, `escape`)
+{{< callout type=warning >}}
+
+Do not forget a keybind to reset the keymap while inside it! (In this case,
+`escape`)
+
+{{< /callout >}}
 
 If you get stuck inside a keymap, you can use `hyprctl dispatch submap reset` to
 go back. If you do not have a terminal open, tough luck buddy. You have been

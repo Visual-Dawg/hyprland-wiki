@@ -57,16 +57,22 @@ and add the line `options nvidia-drm modeset=1`
 More information is available here:
 [https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting](https://wiki.archlinux.org/title/NVIDIA#DRM_kernel_mode_setting)
 
-{{< callout >}}If your GPU is listed as supported by the `nvidia-open-dkms`
-driver, use that one instead. Note that on a laptop, it could cause problems
-with the suspended state when closing the lid, so you might be better off with
-`nvidia-dkms`. {{< /callout >}}
+{{< callout >}}
 
-{{< callout >}}To get multi monitor to work properly on a hybrid graphics device
-(a laptop with both an Intel and an Nvidia GPU), you will need to remove the
-`optimus-manager` package if installed (disabling the service does not work).
-You also need to change your BIOS settings from hybrid graphics to discrete
-graphics. {{< /callout >}}
+If your GPU is listed as supported by the `nvidia-open-dkms` driver, use that
+one instead. Note that on a laptop, it could cause problems with the suspended
+state when closing the lid, so you might be better off with `nvidia-dkms`.
+
+{{< /callout >}}
+
+{{< callout >}}
+
+To get multi monitor to work properly on a hybrid graphics device (a laptop with
+both an Intel and an Nvidia GPU), you will need to remove the `optimus-manager`
+package if installed (disabling the service does not work). You also need to
+change your BIOS settings from hybrid graphics to discrete graphics.
+
+{{< /callout >}}
 
 Export these variables in your hyprland config:
 
@@ -78,12 +84,20 @@ env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = WLR_NO_HARDWARE_CURSORS,1
 ```
 
-{{< callout >}}If you encounter crashes in Firefox, remove the line
-`env = GBM_BACKEND,nvidia-drm`. {{< /callout >}}
+{{< callout >}}
 
-{{< callout >}}If you face problems with Discord windows not displaying or
-screen sharing not working in Zoom, remove or comment the line
-`env = __GLX_VENDOR_LIBRARY_NAME,nvidia`. {{< /callout >}}
+If you encounter crashes in Firefox, remove the line
+`env = GBM_BACKEND,nvidia-drm`.
+
+{{< /callout >}}
+
+{{< callout >}}
+
+If you face problems with Discord windows not displaying or screen sharing not
+working in Zoom, remove or comment the line
+`env = __GLX_VENDOR_LIBRARY_NAME,nvidia`.
+
+{{< /callout >}}
 
 Install `qt5-wayland`, `qt5ct` and `libva`. Additionally
 `libva-nvidia-driver-git` (AUR) to fix crashes in some Electron-based
@@ -130,10 +144,13 @@ Enable the services `nvidia-suspend.service`, `nvidia-hibernate.service` and
 Add `nvidia.NVreg_PreserveVideoMemoryAllocations=1` to your kernel parameters if
 you don't have it already.
 
-{{< callout type=important >}} Suspend functions are currently broken on
-`nvidia-open-dkms`
+{{< callout >}}
+
+Suspend functions are currently broken on `nvidia-open-dkms`
 [due to a bug](https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472), so
-make sure you're on `nvidia-dkms`. {{< /callout >}}
+make sure you're on `nvidia-dkms`.
+
+{{< /callout >}}
 
 For Nix users, the equivalent of the above is
 

@@ -1,6 +1,9 @@
+---
+title: Plugin guidelines
+---
+
 This page documents the recommended guidelines for making a stable and neat
 plugin.
-
 
 ## Making your plugin compatible with hyprpm
 

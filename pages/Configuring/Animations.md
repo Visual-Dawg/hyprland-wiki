@@ -1,3 +1,7 @@
+---
+title: Animations
+---
+
 # General
 
 Animations are declared with the `animation` keyword.

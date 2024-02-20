@@ -1,3 +1,7 @@
+---
+title: Multi-GPU
+---
+
 # General
 
 If your host machine uses multiple GPUs, you may want to primarily use one GPU

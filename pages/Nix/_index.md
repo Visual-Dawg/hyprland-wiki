@@ -9,7 +9,8 @@ To install Hyprland on NixOS, we provide a NixOS and a Home Manager module.
 - _(Required) NixOS Module_: enables critical components needed to run Hyprland
   properly
 - _(Optional) Home-manager module_: lets you declaratively configure Hyprland
-  {{< /callout >}}
+
+{{< /callout >}}
 
 ## NixOS module
 

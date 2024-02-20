@@ -1,7 +1,15 @@
+---
+title: Window Rules
+---
+
 # Disclaimers
 
-{{< callout type=warning >}} Window rules (both V1 and V2) are **case
-sensitive**. (e.g. `firefox` ≠ `Firefox`) {{< /callout >}}
+{{< callout type=warning >}}
+
+Window rules (both V1 and V2) are **case sensitive**. (e.g. `firefox` ≠
+`Firefox`)
+
+{{< /callout >}}
 
 # Window Rules V1
 
@@ -41,8 +49,10 @@ for multiple values like so:
 windowrulev2 = float,class:(kitty),title:(kitty)
 ```
 
-{{< callout type=tip >}} In the case of dynamic window titles such as browser
-windows keep in mind how powerful regex is.
+{{< callout type=info >}}
+
+In the case of dynamic window titles such as browser windows keep in mind how
+powerful regex is.
 
 for example a window rule of:
 `windowrule=opacity 0.3 override 0.3 override,title:(.*)(- Youtube)$` will match
@@ -52,7 +62,9 @@ for any reason.
 
 for the `windowrulev2 = float,class:(kitty),title:(kitty)` example, the
 `class:(kitty)` `WINDOW` field is what keeps the window rule specific to kitty
-terminals. {{< /callout >}}
+terminals.
+
+{{< /callout >}}
 
 For now, the supported fields are:
 
@@ -72,7 +84,7 @@ onworkspace (how many windows are on the workspace) - int
 
 Keep in mind that you _have_ to declare at least one field, but not all.
 
-{{< callout type=tip >}}
+{{< callout type=info >}}
 
 To get more information about a window's class, title, XWayland status or its
 size, you can use `hyprctl clients`.
@@ -202,13 +214,15 @@ windowrulev2 = opacity 0.8 0.8,class:^(kitty)$
 -> all kitty windows will have opacity 0.8, also if they are floating. -> all
 other floating windows will have opacity 0.5.
 
-{{< callout type=tip >}}
+{{< callout type=info >}}
 
 Opacity is _always_ a PRODUCT of all opacities. E.g. `active_opacity` to 0.5 and
 windowrule opacity to 0.5 will result in a total opacity 0.25. You are allowed
 to set opacities over 1, but any opacity product over 1 will cause graphical
 glitches. E.g. `0.5 * 2 = 1`, and it will be fine, `0.5 * 4` will cause
-graphical glitches. {{< /callout >}}
+graphical glitches.
+
+{{< /callout >}}
 
 # Layer Rules
 

@@ -1,3 +1,7 @@
+---
+title: Workspace Rules
+---
+
 # Workspace Rules
 
 You can set workspace rules to achieve workspace-specific behaviors. For

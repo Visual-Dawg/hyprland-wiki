@@ -1,30 +1,33 @@
-hypridle is hyprland's idle management daemon.
+---
+title: hypridle
+---
 
-{{< toc >}}
+hypridle is hyprland's idle management daemon.
 
 ## Configuration
 
-Configuration is done via the config file at `~/.config/hypr/hypridle.conf`.
-A config file is required; hypridle won't run without one.
+Configuration is done via the config file at `~/.config/hypr/hypridle.conf`. A
+config file is required; hypridle won't run without one.
 
 ### General
 
 Variables in the `general` category:
 
-| variable | description | type | default |
-| -- | -- | -- | -- |
-| lock_cmd | command to run when receiving a dbus lock event (e.g. `loginctl lock-session`) | string | empty |
-| unlock_cmd | command to run when receiving a dbus unlock event (e.g. `loginctl unlock-session`) | string | empty |
-| before_sleep_cmd | command to run when receiving a dbus prepare_sleep event | string | empty |
-| after_sleep_cmd | command to run when receiving a dbus post prepare_sleep event | string | empty |
-| ignore_dbus_inhibit | whether to ignore dbus-sent idle inhibit events (e.g. from firefox) | bool | false |
+| variable            | description                                                                        | type   | default |
+| ------------------- | ---------------------------------------------------------------------------------- | ------ | ------- |
+| lock_cmd            | command to run when receiving a dbus lock event (e.g. `loginctl lock-session`)     | string | empty   |
+| unlock_cmd          | command to run when receiving a dbus unlock event (e.g. `loginctl unlock-session`) | string | empty   |
+| before_sleep_cmd    | command to run when receiving a dbus prepare_sleep event                           | string | empty   |
+| after_sleep_cmd     | command to run when receiving a dbus post prepare_sleep event                      | string | empty   |
+| ignore_dbus_inhibit | whether to ignore dbus-sent idle inhibit events (e.g. from firefox)                | bool   | false   |
 
 ### Listeners
 
 Hypridle uses listeners to define actions on idleness.
 
-Every listener has a _timeout_ (in seconds). After idling for _timeout_ seconds, `on-timeout` will fire.
-When action is resumed after idle, `on-resume` will fire.
+Every listener has a _timeout_ (in seconds). After idling for _timeout_ seconds,
+`on-timeout` will fire. When action is resumed after idle, `on-resume` will
+fire.
 
 Example listener:
 
